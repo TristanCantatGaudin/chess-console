@@ -7,6 +7,7 @@ import {COLOR, INPUT_EVENT_TYPE} from "cm-chessboard/src/Chessboard.js"
 import {Chess} from "chess.mjs/src/Chess.js"
 import {ChessConsolePlayer} from "../ChessConsolePlayer.js"
 import {CONSOLE_MESSAGE_TOPICS} from "../ChessConsole.js"
+import {GAME_VARIANT} from "cm-chess/src/Chess.js"
 import {PremoveManager} from "./PremoveManager.js"
 
 export class LocalPlayer extends ChessConsolePlayer {
@@ -29,7 +30,8 @@ export class LocalPlayer extends ChessConsolePlayer {
      * @returns {boolean} True if move is valid or promotion dialog shown
      */
     validateMoveAndPromote(fen, squareFrom, squareTo, callback) {
-        const tmpChess = new Chess(fen)
+        const isChess960 = this.chessConsole.state.chess.props.gameVariant === GAME_VARIANT.chess960
+        const tmpChess = new Chess(fen, isChess960 ? {chess960: true} : undefined)
         const move = {from: squareFrom, to: squareTo}
         const moveResult = tmpChess.move(move)
 

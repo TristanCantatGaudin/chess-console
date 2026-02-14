@@ -218,7 +218,8 @@ class ChessConsoleMarkers extends Markers {
         this.drawAutoMarkersDebounced = setTimeout(() => {
                 this.removeMarkers(this.props.autoMarkers)
                 const board = this.props.board
-                const moves = this.props.board.chessConsole.state.chess.moves({square: event.square, verbose: true})
+                const chess = this.props.board.chessConsole.state.chess
+                const moves = chess.moves({square: event.square, verbose: true})
                 if (board.props.markLegalMoves) {
                     if (event.type === INPUT_EVENT_TYPE.moveInputStarted ||
                         event.type === INPUT_EVENT_TYPE.validateMoveInput ||
@@ -232,7 +233,8 @@ class ChessConsoleMarkers extends Markers {
                             if (move.promotion && move.promotion !== "q") {
                                 continue
                             }
-                            if (event.chessboard.getPiece(move.to)) {
+                            const hasPiece = event.chessboard.getPiece(move.to)
+                            if (hasPiece) {
                                 event.chessboard.addMarker(board.props.markers.legalMoveCapture, move.to)
                             } else {
                                 event.chessboard.addMarker(board.props.markers.legalMove, move.to)

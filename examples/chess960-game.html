@@ -50,12 +50,13 @@
 /*
 [FEN "bnrqnkrb/pppppppp/8/8/8/8/PPPPPPPP/BNRQNKRB w KQkq - 0 1"]` // 131
 [FEN "rbqnkrbn/pppppppp/8/8/8/8/PPPPPPPP/RBQNKRBN w KQkq - 0 1"]` // 604
+[FEN "rbqnkrbn/pppppppp/8/8/8/2PPN3/PPBQPPPP/R3KRBN w KQkq - 0 1"]` // 604 king side cleared
 */
 
     const pgn =
         `[SetUp "1"]
 [Variant "Chess960"]
-[FEN "rbqnkrbn/pppppppp/8/8/8/8/PPPPPPPP/RBQNKRBN w KQkq - 0 1"]` // 604
+[FEN "rbqnkrbn/pppppppp/8/8/8/2PPN3/PPBQPPPP/R3KRBN w KQkq - 0 1"]` // 604 king side cleared
     new ChessConsole(
         document.getElementById("console-container"),
         {name: "Player", type: LocalPlayer},
