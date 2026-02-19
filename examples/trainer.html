@@ -65,10 +65,15 @@ async function fetchStudyList() {
 
     const text = await response.text()
 
+    // Split lines into studyId + orientation
     return text
         .split("\n")
         .map(line => line.trim())
         .filter(line => line.length > 0)
+        .map(line => {
+            const [studyId, orientation] = line.split(/\s+/)
+            return { studyId, orientation: orientation || "black" }
+        })
 }
 
 async function fetchRandomChapter(studyId) {
@@ -78,18 +83,15 @@ async function fetchRandomChapter(studyId) {
     }
 
     let fullPgn = await response.text()
-
     fullPgn = fullPgn.replace(/\r\n/g, "\n").trim()
 
     const chapters = fullPgn.split(/\n\n(?=\[Event )/)
-
     if (!chapters || chapters.length === 0) {
         throw new Error("No chapters found in study")
     }
 
     const randomIndex = Math.floor(Math.random() * chapters.length)
     let selectedPgn = chapters[randomIndex].trim()
-
     selectedPgn = selectedPgn.replace(/\d+\.\s*$/, "")
 
     if (!selectedPgn.match(/(1-0|0-1|1\/2-1\/2|\*)\s*$/)) {
@@ -122,12 +124,12 @@ async function fetchRandomChapter(studyId) {
         return
     }
 
-    const randomStudy =
-        studies[Math.floor(Math.random() * studies.length)]
+    // Pick a random study
+    const randomStudy = studies[Math.floor(Math.random() * studies.length)]
 
     let selected
     try {
-        selected = await fetchRandomChapter(randomStudy)
+        selected = await fetchRandomChapter(randomStudy.studyId)
     } catch (err) {
         alert("Failed loading selected study.")
         console.error(err)
@@ -137,8 +139,11 @@ async function fetchRandomChapter(studyId) {
     document.getElementById("chapterTitle").innerText =
         `Study: ${selected.studyId} — ${selected.title}`
 
-    document.getElementById("pgnOutput").innerText =
-        selected.pgn
+    document.getElementById("pgnOutput").innerText = selected.pgn
+
+    // Map "white"/"black" to "w"/"b"
+    const colorMap = { white: "w", black: "b" }
+    const playerColor = colorMap[randomStudy.orientation.toLowerCase()] || "b"
 
     new ChessConsole(
         document.getElementById("console-container"),
@@ -147,7 +152,8 @@ async function fetchRandomChapter(studyId) {
     ).initialized.then((chessConsole) => {
 
         new Board(chessConsole, {
-            assetsUrl: "../node_modules/cm-chessboard/assets/"
+            assetsUrl: "../node_modules/cm-chessboard/assets/",
+            orientation: playerColor // <--- set board orientation
         }).initialized.then(() => {
 
             new Persistence(chessConsole, {
@@ -155,7 +161,7 @@ async function fetchRandomChapter(studyId) {
             })
 
             chessConsole.initGame({
-                playerColor: "b",
+                playerColor: playerColor, // <--- player at bottom
                 pgn: selected.pgn
             })
         })
