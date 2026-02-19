@@ -57,6 +57,20 @@ import {GameControl} from "../src/components/GameControl/GameControl.js"
 import {Sound} from "../src/components/Sound.js"
 import {Persistence} from "../src/components/Persistence.js"
 
+async function fetchStudyList() {
+    const response = await fetch("../lichess_URLs.txt")
+    if (!response.ok) {
+        throw new Error("Could not load lichess_URLs.txt")
+    }
+
+    const text = await response.text()
+
+    return text
+        .split("\n")
+        .map(line => line.trim())
+        .filter(line => line.length > 0)
+}
+
 async function fetchRandomChapter(studyId) {
     const response = await fetch(`/study/${studyId}`)
     if (!response.ok) {
@@ -65,10 +79,8 @@ async function fetchRandomChapter(studyId) {
 
     let fullPgn = await response.text()
 
-    // Normalize line endings
     fullPgn = fullPgn.replace(/\r\n/g, "\n").trim()
 
-    // Split chapters safely
     const chapters = fullPgn.split(/\n\n(?=\[Event )/)
 
     if (!chapters || chapters.length === 0) {
@@ -78,10 +90,8 @@ async function fetchRandomChapter(studyId) {
     const randomIndex = Math.floor(Math.random() * chapters.length)
     let selectedPgn = chapters[randomIndex].trim()
 
-    // Remove trailing incomplete move numbers like "23."
     selectedPgn = selectedPgn.replace(/\d+\.\s*$/, "")
 
-    // Ensure it ends with a result (required by strict parsers)
     if (!selectedPgn.match(/(1-0|0-1|1\/2-1\/2|\*)\s*$/)) {
         selectedPgn += " *"
     }
@@ -91,26 +101,44 @@ async function fetchRandomChapter(studyId) {
 
     return {
         title: chapterTitle,
-        pgn: selectedPgn
+        pgn: selectedPgn,
+        studyId: studyId
     }
 }
 
-
 (async () => {
 
-    const studyId = "VWSGsdXG"
-
-    let selected
+    let studies
     try {
-        selected = await fetchRandomChapter(studyId)
+        studies = await fetchStudyList()
     } catch (err) {
-        console.error("Failed to load study:", err)
-        alert("Could not load study. Is server.py running?")
+        alert("Could not load lichess_URLs.txt")
+        console.error(err)
         return
     }
 
-    document.getElementById("chapterTitle").innerText = selected.title
-    document.getElementById("pgnOutput").innerText = selected.pgn
+    if (studies.length === 0) {
+        alert("No studies found in lichess_URLs.txt")
+        return
+    }
+
+    const randomStudy =
+        studies[Math.floor(Math.random() * studies.length)]
+
+    let selected
+    try {
+        selected = await fetchRandomChapter(randomStudy)
+    } catch (err) {
+        alert("Failed loading selected study.")
+        console.error(err)
+        return
+    }
+
+    document.getElementById("chapterTitle").innerText =
+        `Study: ${selected.studyId} — ${selected.title}`
+
+    document.getElementById("pgnOutput").innerText =
+        selected.pgn
 
     new ChessConsole(
         document.getElementById("console-container"),
