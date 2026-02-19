@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Chess Trainer – Random Lichess Study Chapter</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="../assets/styles/screen.css"/>
+</head>
+<body>
+
+<div class="container-fluid">
+    <h1><a href="../">chess-console</a></h1>
+    <h2>Random Chapter from Lichess Study</h2>
+
+    <div id="console-container"></div>
+
+    <div class="mt-4">
+        <strong>Selected Chapter:</strong>
+        <div id="chapterTitle" class="text-primary mb-3"></div>
+    </div>
+
+    <p>The loaded PGN:</p>
+    <pre id="pgnOutput"></pre>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/es-module-shims@1.7.2/dist/es-module-shims.min.js"></script>
+
+<script type="importmap">
+{
+    "imports": {
+        "cm-chessboard/": "../node_modules/cm-chessboard/",
+        "cm-web-modules/": "../node_modules/cm-web-modules/",
+        "chess.mjs/": "../node_modules/chess.mjs/",
+        "cm-pgn/": "../node_modules/cm-pgn/",
+        "cm-chess/": "../node_modules/cm-chess/",
+        "bootstrap-show-modal/": "../node_modules/bootstrap-show-modal/"
+    }
+}
+</script>
+
+<script type="module">
+import {ChessConsole} from "../src/ChessConsole.js"
+import {LocalPlayer} from "../src/players/LocalPlayer.js"
+import {RandomPlayer} from "../src/players/RandomPlayer.js"
+import {Board} from "../src/components/Board.js"
+import {GameStateOutput} from "../src/components/GameStateOutput.js"
+import {History} from "../src/components/History.js"
+import {CapturedPieces} from "../src/components/CapturedPieces.js"
+import {HistoryControl} from "../src/components/HistoryControl.js"
+import {GameControl} from "../src/components/GameControl/GameControl.js"
+import {Sound} from "../src/components/Sound.js"
+import {Persistence} from "../src/components/Persistence.js"
+
+async function fetchRandomChapter(studyId) {
+    const response = await fetch(`/study/${studyId}`)
+    if (!response.ok) {
+        throw new Error("Failed to fetch study from proxy")
+    }
+
+    let fullPgn = await response.text()
+
+    // Normalize line endings
+    fullPgn = fullPgn.replace(/\r\n/g, "\n").trim()
+
+    // Split chapters safely
+    const chapters = fullPgn.split(/\n\n(?=\[Event )/)
+
+    if (!chapters || chapters.length === 0) {
+        throw new Error("No chapters found in study")
+    }
+
+    const randomIndex = Math.floor(Math.random() * chapters.length)
+    let selectedPgn = chapters[randomIndex].trim()
+
+    // Remove trailing incomplete move numbers like "23."
+    selectedPgn = selectedPgn.replace(/\d+\.\s*$/, "")
+
+    // Ensure it ends with a result (required by strict parsers)
+    if (!selectedPgn.match(/(1-0|0-1|1\/2-1\/2|\*)\s*$/)) {
+        selectedPgn += " *"
+    }
+
+    const titleMatch = selectedPgn.match(/\[Event "(.*?)"\]/)
+    const chapterTitle = titleMatch ? titleMatch[1] : "Unknown Chapter"
+
+    return {
+        title: chapterTitle,
+        pgn: selectedPgn
+    }
+}
+
+
+(async () => {
+
+    const studyId = "VWSGsdXG"
+
+    let selected
+    try {
+        selected = await fetchRandomChapter(studyId)
+    } catch (err) {
+        console.error("Failed to load study:", err)
+        alert("Could not load study. Is server.py running?")
+        return
+    }
+
+    document.getElementById("chapterTitle").innerText = selected.title
+    document.getElementById("pgnOutput").innerText = selected.pgn
+
+    new ChessConsole(
+        document.getElementById("console-container"),
+        { name: "Player", type: LocalPlayer },
+        { name: "Opponent", type: RandomPlayer }
+    ).initialized.then((chessConsole) => {
+
+        new Board(chessConsole, {
+            assetsUrl: "../node_modules/cm-chessboard/assets/"
+        }).initialized.then(() => {
+
+            new Persistence(chessConsole, {
+                savePrefix: "trainerRandomStudy"
+            })
+
+            chessConsole.initGame({
+                playerColor: "b",
+                pgn: selected.pgn
+            })
+        })
+
+        new GameStateOutput(chessConsole)
+        new History(chessConsole)
+        new HistoryControl(chessConsole)
+        new CapturedPieces(chessConsole)
+        new GameControl(chessConsole)
+        new Sound(chessConsole, {
+            soundSpriteFile: "../assets/sounds/chess_console_sounds.mp3",
+        })
+    })
+
+})()
+</script>
+
+</body>
+</html>
