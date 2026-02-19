@@ -65,7 +65,6 @@ async function fetchStudyList() {
 
     const text = await response.text()
 
-    // Split lines into studyId + orientation
     return text
         .split("\n")
         .map(line => line.trim())
@@ -124,7 +123,6 @@ async function fetchRandomChapter(studyId) {
         return
     }
 
-    // Pick a random study
     const randomStudy = studies[Math.floor(Math.random() * studies.length)]
 
     let selected
@@ -141,7 +139,6 @@ async function fetchRandomChapter(studyId) {
 
     document.getElementById("pgnOutput").innerText = selected.pgn
 
-    // Map "white"/"black" to "w"/"b"
     const colorMap = { white: "w", black: "b" }
     const playerColor = colorMap[randomStudy.orientation.toLowerCase()] || "b"
 
@@ -153,17 +150,24 @@ async function fetchRandomChapter(studyId) {
 
         new Board(chessConsole, {
             assetsUrl: "../node_modules/cm-chessboard/assets/",
-            orientation: playerColor // <--- set board orientation
+            orientation: playerColor
         }).initialized.then(() => {
 
             new Persistence(chessConsole, {
                 savePrefix: "trainerRandomStudy"
             })
 
+            // Initialize the game at the **start of the PGN**
             chessConsole.initGame({
-                playerColor: playerColor, // <--- player at bottom
+                playerColor: playerColor,
                 pgn: selected.pgn
             })
+
+            // Rewind automatically
+            chessConsole.state.plyViewed = 0
+            if (chessConsole.state.chess.goto) {
+                chessConsole.state.chess.goto(0) // ensure internal board is at start
+            }
         })
 
         new GameStateOutput(chessConsole)
