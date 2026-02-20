@@ -9,13 +9,6 @@
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <link rel="stylesheet" href="../assets/styles/screen.css"/>
-
-    <style>
-        .move-comment {
-            font-size: 0.95rem;
-            line-height: 1.4;
-        }
-    </style>
 </head>
 <body>
 
@@ -51,6 +44,7 @@
 </script>
 
 <script type="module">
+
 import {ChessConsole} from "../src/ChessConsole.js"
 import {LocalPlayer} from "../src/players/LocalPlayer.js"
 import {RandomPlayer} from "../src/players/RandomPlayer.js"
@@ -63,13 +57,11 @@ import {GameControl} from "../src/components/GameControl/GameControl.js"
 import {Sound} from "../src/components/Sound.js"
 import {Persistence} from "../src/components/Persistence.js"
 import {MoveComment} from "../src/components/MoveComment.js"
-import {Observe} from "cm-web-modules/src/observe/Observe.js"
 
-(async () => {
-
+async function fetchStudyList() {
     const response = await fetch("../lichess_URLs.txt")
     const text = await response.text()
-    const studies = text
+    return text
         .split("\n")
         .map(line => line.trim())
         .filter(line => line.length > 0)
@@ -77,11 +69,11 @@ import {Observe} from "cm-web-modules/src/observe/Observe.js"
             const [studyId, orientation] = line.split(/\s+/)
             return { studyId, orientation: orientation || "black" }
         })
+}
 
-    const randomStudy = studies[Math.floor(Math.random() * studies.length)]
-
-    const studyResponse = await fetch(`/study/${randomStudy.studyId}`)
-    let fullPgn = await studyResponse.text()
+async function fetchRandomChapter(studyId) {
+    const response = await fetch(`/study/${studyId}`)
+    let fullPgn = await response.text()
     fullPgn = fullPgn.replace(/\r\n/g, "\n").trim()
 
     const chapters = fullPgn.split(/\n\n(?=\[Event )/)
@@ -94,12 +86,36 @@ import {Observe} from "cm-web-modules/src/observe/Observe.js"
     const titleMatch = selectedPgn.match(/\[Event "(.*?)"\]/)
     const chapterTitle = titleMatch ? titleMatch[1] : "Unknown Chapter"
 
+    return { title: chapterTitle, pgn: selectedPgn }
+}
+
+(async () => {
+
+    const studies = await fetchStudyList()
+    const randomStudy = studies[Math.floor(Math.random() * studies.length)]
+    const selected = await fetchRandomChapter(randomStudy.studyId)
+
     document.getElementById("chapterTitle").innerText =
-        `Study: ${randomStudy.studyId} — ${chapterTitle}`
-    document.getElementById("pgnOutput").innerText = selectedPgn
+        `Study: ${randomStudy.studyId} — ${selected.title}`
+
+    document.getElementById("pgnOutput").innerText = selected.pgn
 
     const colorMap = { white: "w", black: "b" }
     const playerColor = colorMap[randomStudy.orientation.toLowerCase()] || "b"
+
+    // 🎨 REAL available themes
+    const boardThemes = [
+        "default",
+        "default-contrast",
+        "green",
+        "blue",
+        "chess-club",
+        "chessboard-js",
+        "black-and-white"
+    ]
+
+    const randomTheme =
+        boardThemes[Math.floor(Math.random() * boardThemes.length)]
 
     new ChessConsole(
         document.getElementById("console-container"),
@@ -109,14 +125,23 @@ import {Observe} from "cm-web-modules/src/observe/Observe.js"
 
         new Board(chessConsole, {
             assetsUrl: "../node_modules/cm-chessboard/assets/",
-            orientation: playerColor
+            orientation: playerColor,
+            style: {
+                cssClass: randomTheme,     // 🎨 random valid theme
+                showCoordinates: true,
+                pieces: {
+                    file: "pieces/staunty.svg"  // ♟ Staunty pieces
+                }
+            }
         }).initialized.then(() => {
 
-            new Persistence(chessConsole, { savePrefix: "trainerRandomStudy" })
+            new Persistence(chessConsole, {
+                savePrefix: "trainerRandomStudy"
+            })
 
             chessConsole.initGame({
                 playerColor: playerColor,
-                pgn: selectedPgn
+                pgn: selected.pgn
             })
 
             chessConsole.state.plyViewed = 0
@@ -127,13 +152,14 @@ import {Observe} from "cm-web-modules/src/observe/Observe.js"
         new HistoryControl(chessConsole)
         new CapturedPieces(chessConsole)
         new GameControl(chessConsole)
-        new MoveComment(chessConsole)  // ← comment box
+        new MoveComment(chessConsole)
         new Sound(chessConsole, {
             soundSpriteFile: "../assets/sounds/chess_console_sounds.mp3"
         })
     })
 
 })()
+
 </script>
 
 </body>
