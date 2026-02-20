@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Chess Trainer – Random Lichess Study Chapter</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="../assets/styles/screen.css"/>
+</head>
+<body>
+
+<div class="container-fluid">
+    <h1><a href="../">chess-console</a></h1>
+    <h2>Random Chapter from Lichess Study</h2>
+
+    <div id="console-container"></div>
+
+    <div class="mt-4">
+        <strong>Selected Chapter:</strong>
+        <div id="chapterTitle" class="text-primary mb-3"></div>
+    </div>
+
+    <p>The loaded PGN:</p>
+    <pre id="pgnOutput"></pre>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/es-module-shims@1.7.2/dist/es-module-shims.min.js"></script>
+
+<script type="importmap">
+{
+    "imports": {
+        "cm-chessboard/": "../node_modules/cm-chessboard/",
+        "cm-web-modules/": "../node_modules/cm-web-modules/",
+        "chess.mjs/": "../node_modules/chess.mjs/",
+        "cm-pgn/": "../node_modules/cm-pgn/",
+        "cm-chess/": "../node_modules/cm-chess/",
+        "bootstrap-show-modal/": "../node_modules/bootstrap-show-modal/"
+    }
+}
+</script>
+
+<script type="module">
+import {ChessConsole} from "../src/ChessConsole.js"
+import {LocalPlayer} from "../src/players/LocalPlayer.js"
+import {RandomPlayer} from "../src/players/RandomPlayer.js"
+import {Board} from "../src/components/Board.js"
+import {GameStateOutput} from "../src/components/GameStateOutput.js"
+import {History} from "../src/components/History.js"
+import {CapturedPieces} from "../src/components/CapturedPieces.js"
+import {HistoryControl} from "../src/components/HistoryControl.js"
+import {GameControl} from "../src/components/GameControl/GameControl.js"
+import {Sound} from "../src/components/Sound.js"
+import {Persistence} from "../src/components/Persistence.js"
+import {Observe} from "cm-web-modules/src/observe/Observe.js"
+
+async function fetchStudyList() {
+    const response = await fetch("../lichess_URLs.txt")
+    if (!response.ok) throw new Error("Could not load lichess_URLs.txt")
+    const text = await response.text()
+    return text
+        .split("\n")
+        .map(line => line.trim())
+        .filter(line => line.length > 0)
+        .map(line => {
+            const [studyId, orientation] = line.split(/\s+/)
+            return { studyId, orientation: orientation || "black" }
+        })
+}
+
+async function fetchRandomChapter(studyId) {
+    const response = await fetch(`/study/${studyId}`)
+    if (!response.ok) throw new Error("Failed to fetch study from proxy")
+    let fullPgn = await response.text()
+    fullPgn = fullPgn.replace(/\r\n/g, "\n").trim()
+    const chapters = fullPgn.split(/\n\n(?=\[Event )/)
+    if (!chapters || chapters.length === 0) throw new Error("No chapters found in study")
+    const randomIndex = Math.floor(Math.random() * chapters.length)
+    let selectedPgn = chapters[randomIndex].trim()
+    selectedPgn = selectedPgn.replace(/\d+\.\s*$/, "")
+    if (!selectedPgn.match(/(1-0|0-1|1\/2-1\/2|\*)\s*$/)) selectedPgn += " *"
+    const titleMatch = selectedPgn.match(/\[Event "(.*?)"\]/)
+    const chapterTitle = titleMatch ? titleMatch[1] : "Unknown Chapter"
+    return { title: chapterTitle, pgn: selectedPgn, studyId }
+}
+
+(async () => {
+    let studies
+    try { studies = await fetchStudyList() } 
+    catch (err) { alert("Could not load lichess_URLs.txt"); console.error(err); return }
+
+    if (studies.length === 0) { alert("No studies found in lichess_URLs.txt"); return }
+
+    const randomStudy = studies[Math.floor(Math.random() * studies.length)]
+
+    let selected
+    try { selected = await fetchRandomChapter(randomStudy.studyId) } 
+    catch (err) { alert("Failed loading selected study."); console.error(err); return }
+
+    document.getElementById("chapterTitle").innerText =
+        `Study: ${randomStudy.studyId} — ${selected.title}`
+    document.getElementById("pgnOutput").innerText = selected.pgn
+
+    const colorMap = { white: "w", black: "b" }
+    const playerColor = colorMap[randomStudy.orientation.toLowerCase()] || "b"
+
+    new ChessConsole(
+        document.getElementById("console-container"),
+        { name: "Player", type: LocalPlayer },
+        { name: "Opponent", type: RandomPlayer }
+    ).initialized.then((chessConsole) => {
+
+        new Board(chessConsole, {
+            assetsUrl: "../node_modules/cm-chessboard/assets/",
+            orientation: playerColor
+        }).initialized.then(() => {
+
+            new Persistence(chessConsole, { savePrefix: "trainerRandomStudy" })
+            chessConsole.initGame({ playerColor: playerColor, pgn: selected.pgn })
+            chessConsole.state.plyViewed = 0
+            if (chessConsole.state.chess.goto) chessConsole.state.chess.goto(0)
+
+            // ------------------------
+            // Opponent auto-play logic
+            // ------------------------
+            let opponentTimer = null
+            const opponentAutoAdvance = () => {
+                if (opponentTimer) clearTimeout(opponentTimer)
+
+                const ply = chessConsole.state.plyViewed
+                const chess = chessConsole.state.chess
+                if (ply >= chess.plyCount()) return // game over
+
+                // Determine next move color (ply 0 = white, ply 1 = black, etc.)
+                const moveColor = ply % 2 === 0 ? "w" : "b"
+
+                // Is it opponent's turn?
+                const isOpponentsTurn =
+                    (moveColor === "w" && playerColor !== "w") ||
+                    (moveColor === "b" && playerColor !== "b")
+
+                if (isOpponentsTurn) {
+                    opponentTimer = setTimeout(() => {
+                        chessConsole.state.plyViewed++
+                        opponentAutoAdvance()
+                    }, 300)
+                }
+            }
+
+            Observe.property(chessConsole.state, "plyViewed", opponentAutoAdvance)
+            opponentAutoAdvance()
+        })
+
+        new GameStateOutput(chessConsole)
+        new History(chessConsole)
+        new HistoryControl(chessConsole)
+        new CapturedPieces(chessConsole)
+        new GameControl(chessConsole)
+        new Sound(chessConsole, { soundSpriteFile: "../assets/sounds/chess_console_sounds.mp3" })
+    })
+
+})()
+</script>
+
+</body>
+</html>
