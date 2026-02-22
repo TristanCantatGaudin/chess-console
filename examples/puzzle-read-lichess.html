@@ -19,6 +19,7 @@
 
 <div class="container-fluid">
     <div id="console-container"></div>
+
     <pre id="pgnOutput"
          class="bg-light p-3 border rounded mt-4"
          style="white-space: pre-wrap;"></pre>
@@ -86,44 +87,33 @@ async function fetchRandomChapter(studyId) {
     if (!selectedPgn.match(/(1-0|0-1|1\/2-1\/2|\*)\s*$/))
         selectedPgn += " *"
 
-    const titleMatch = selectedPgn.match(/\[Event "(.*?)"\]/)
-    const chapterTitle = titleMatch ? titleMatch[1] : "Unknown Chapter"
-
-    return { title: chapterTitle, pgn: selectedPgn, studyId }
+    return { pgn: selectedPgn }
 }
 
 (async () => {
 
-    let studies
-    try {
-        studies = await fetchStudyList()
-    } catch (err) {
-        alert("Could not load lichess_URLs.txt")
-        console.error(err)
-        return
-    }
-
-    if (studies.length === 0) {
-        alert("No studies found in lichess_URLs.txt")
-        return
-    }
-
+    const studies = await fetchStudyList()
     const randomStudy = studies[Math.floor(Math.random() * studies.length)]
-
-    let selected
-    try {
-        selected = await fetchRandomChapter(randomStudy.studyId)
-    } catch (err) {
-        alert("Failed loading selected study.")
-        console.error(err)
-        return
-    }
-
+    const selected = await fetchRandomChapter(randomStudy.studyId)
 
     document.getElementById("pgnOutput").innerText = selected.pgn
 
     const orientation = randomStudy.orientation.toLowerCase()
     const playerIsBlack = orientation === "black"
+
+    // 🎨 Available board themes
+    const boardThemes = [
+        "default",
+        "default-contrast",
+        "green",
+        "blue",
+        "chess-club",
+        "chessboard-js",
+        "black-and-white"
+    ]
+
+    const randomTheme =
+        boardThemes[Math.floor(Math.random() * boardThemes.length)]
 
     const puzzlePlayerConfig = {
         name: playerIsBlack ? "Opponent" : "Player",
@@ -150,9 +140,7 @@ async function fetchRandomChapter(studyId) {
         document.getElementById("console-container"),
         whiteConfig,
         blackConfig,
-        {
-            pgn: selected.pgn   // IMPORTANT for MoveComment
-        }
+        { pgn: selected.pgn }
     ).initialized.then((chessConsole) => {
 
         const savePrefix = "PuzzleMode"
@@ -161,7 +149,14 @@ async function fetchRandomChapter(studyId) {
 
         new Board(chessConsole, {
             assetsUrl: "../node_modules/cm-chessboard/assets/",
-            orientation: playerIsBlack ? "b" : "w"
+            orientation: playerIsBlack ? "b" : "w",
+            style: {
+                cssClass: randomTheme,     // 🎨 random board theme
+                showCoordinates: true,
+                pieces: {
+                    file: "pieces/staunty.svg"  // ♟ Staunty pieces
+                }
+            }
         }).initialized.then(() => {
             new Persistence(chessConsole, {savePrefix}).load()
         })
@@ -171,7 +166,7 @@ async function fetchRandomChapter(studyId) {
         new HistoryControl(chessConsole)
         new CapturedPieces(chessConsole)
         new GameControl(chessConsole)
-        new MoveComment(chessConsole)   
+        new MoveComment(chessConsole)
         new Sound(chessConsole, {
             soundSpriteFile: "../assets/sounds/chess_console_sounds.mp3"
         })
