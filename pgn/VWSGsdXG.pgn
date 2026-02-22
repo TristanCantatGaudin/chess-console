@@ -1,0 +1,240 @@
+[Event "dojo_Vienna_Copycat: Chapter 1"]
+[Date "2024.06.18"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C25"]
+[Opening "Vienna Game: Stanley Variation, Meitner-Mieses Gambit"]
+[StudyName "dojo_Vienna_Copycat"]
+[ChapterName "Chapter 1"]
+[ChapterURL "https://lichess.org/study/VWSGsdXG/X6bYVLfb"]
+[Annotator "https://lichess.org/@/NeroDiTroia"]
+[UTCDate "2024.06.18"]
+[UTCTime "10:59:10"]
+
+1. e4 e5 2. Nc3 Nc6 3. Bc4 Bc5 4. Qg4 Qf6 5. Nd5 Qxf2+ 6. Kd1 g6 7. Nh3 { [%cal Rd5c7] } 7... d6 8. Nxf2 Bxg4+ 9. Nxg4 *
+
+
+[Event "dojo_Vienna_Copycat: Chapter 2"]
+[Date "2024.06.18"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C25"]
+[Opening "Vienna Game: Stanley Variation, Meitner-Mieses Gambit"]
+[StudyName "dojo_Vienna_Copycat"]
+[ChapterName "Chapter 2"]
+[ChapterURL "https://lichess.org/study/VWSGsdXG/iPRGe6OA"]
+[Annotator "https://lichess.org/@/NeroDiTroia"]
+[UTCDate "2024.06.18"]
+[UTCTime "11:00:31"]
+
+1. e4 e5 2. Nc3 Nc6 3. Bc4 Bc5 4. Qg4 Qf6 5. Nd5 Qxf2+ 6. Kd1 g6 7. Nh3 Qd4 8. d3 d6 9. Qf3 { Qg3 and Qf4 also work very well. Nxc7+ loses a lot of the advantage and only gives 60% win. } { [%cal Gg4g5,Gg4h4,Gg4g3,Gg4f4,Gg4f3,Rd5c7] } 9... Bxh3 10. gxh3 O-O-O 11. Rf1 *
+
+
+[Event "dojo_Vienna_Copycat: Chapter 3"]
+[Date "2024.06.18"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C25"]
+[Opening "Vienna Game: Stanley Variation, Meitner-Mieses Gambit"]
+[StudyName "dojo_Vienna_Copycat"]
+[ChapterName "Chapter 3"]
+[ChapterURL "https://lichess.org/study/VWSGsdXG/G7qfh4lH"]
+[Annotator "https://lichess.org/@/NeroDiTroia"]
+[UTCDate "2024.06.18"]
+[UTCTime "11:02:07"]
+
+1. e4 e5 2. Nc3 Nc6 3. Bc4 Bc5 4. Qg4 Qf6 5. Nd5 Qxf2+ 6. Kd1 d6 7. Qxg7 Na5 8. Be2 Be6 9. Nh3 (9. Nxc7+ { The most played, great move, but not our favourite here. }) (9. Qxh8 { Ok, +3 but not the best we could do. He has the annoying Qxg2 reply, after which we have a tactic! } 9... Qxg2 10. Qxg8+ Qxg8 11. Nf6+) *
+
+
+[Event "dojo_Vienna_Copycat: Chapter 4"]
+[Date "2024.06.18"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C25"]
+[Opening "Vienna Game: Stanley Variation, Meitner-Mieses Gambit"]
+[StudyName "dojo_Vienna_Copycat"]
+[ChapterName "Chapter 4"]
+[ChapterURL "https://lichess.org/study/VWSGsdXG/iIz0LhsX"]
+[Annotator "https://lichess.org/@/NeroDiTroia"]
+[UTCDate "2024.06.18"]
+[UTCTime "11:11:57"]
+
+1. e4 e5 2. Nc3 Nc6 3. Bc4 Bc5 4. Qg4 Qf6 5. Nd5 Qxf2+ 6. Kd1 d6 7. Qxg7 Nd4 8. Nxc7+ (8. Qxh8?? { Absolutely not. We are getting mated in 4. }) (8. c3 { Good too, and high win rate, but not the one we want here. }) 8... Kd8 9. Nxa8 b5 10. Qf8+ Kd7 11. Qxf7+ Qxf7 12. Bxf7 Bb7 13. Bd5 Bxd5 14. exd5 *
+
+
+[Event "dojo_Vienna_Copycat: Chapter 5"]
+[Date "2024.06.18"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C25"]
+[Opening "Vienna Game: Stanley Variation, Meitner-Mieses Gambit"]
+[StudyName "dojo_Vienna_Copycat"]
+[ChapterName "Chapter 5"]
+[ChapterURL "https://lichess.org/study/VWSGsdXG/kmqU8xQu"]
+[Annotator "https://lichess.org/@/NeroDiTroia"]
+[UTCDate "2024.06.18"]
+[UTCTime "11:19:10"]
+
+1. e4 e5 2. Nc3 Nc6 3. Bc4 Bc5 4. Qg4 Qf6 5. Nd5 Qxf2+ 6. Kd1 Nf6 7. Qxg7 Nxd5 8. Qxh8+ Ke7 9. Qg8 { Best by far, but only 2% played! } (9. Bxd5?? { No. Mate in 1. }) (9. exd5? { The most played, but eval goes from +4 to 0 (although with 64% win rate). }) (9. Qg7) 9... d6 (9... Na5) *
+
+
+[Event "dojo_Vienna_Copycat: Chapter 6"]
+[Date "2024.06.18"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C25"]
+[Opening "Vienna Game: Stanley Variation, Meitner-Mieses Gambit"]
+[StudyName "dojo_Vienna_Copycat"]
+[ChapterName "Chapter 6"]
+[ChapterURL "https://lichess.org/study/VWSGsdXG/NBoy8eFV"]
+[Annotator "https://lichess.org/@/NeroDiTroia"]
+[UTCDate "2024.06.18"]
+[UTCTime "11:25:58"]
+
+1. e4 e5 2. Nc3 Nc6 3. Bc4 Bc5 4. Qg4 Qf6 5. Nd5 Qxf2+ 6. Kd1 Nf6 7. Qxg7 Rg8 8. Nxf6+ (8. Qxf6 { Still crushing tbh. But not the engine move. Almost. } 8... Qxf6 9. Nxf6+) 8... Ke7 9. Nxg8+ Kd6 { Engine says #11, but so many good lines. } *
+
+
+[Event "dojo_Vienna_Copycat: Chapter 7"]
+[Date "2024.06.19"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C25"]
+[Opening "Vienna Game: Max Lange Defense"]
+[StudyName "dojo_Vienna_Copycat"]
+[ChapterName "Chapter 7"]
+[ChapterURL "https://lichess.org/study/VWSGsdXG/a33jW7Xl"]
+[Annotator "https://lichess.org/@/NeroDiTroia"]
+[UTCDate "2024.06.19"]
+[UTCTime "15:01:08"]
+
+1. e4 e5 2. Nc3 Nc6 3. Bc4 Bc5 4. Qg4 Nf6 5. Qxg7 Rf8 6. d3 d6 (6... Nd4 7. Bg5) 7. Bg5 Bxf2+ 8. Kxf2 Ng4+ 9. Ke1 f6 10. Nd5 fxg5 11. Nxc7+ Qxc7 12. Qxc7 *
+
+
+[Event "dojo_Vienna_Copycat: Chapter 8"]
+[Date "2024.06.19"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C25"]
+[Opening "Vienna Game: Max Lange Defense"]
+[StudyName "dojo_Vienna_Copycat"]
+[ChapterName "Chapter 8"]
+[ChapterURL "https://lichess.org/study/VWSGsdXG/yGpVquND"]
+[Annotator "https://lichess.org/@/NeroDiTroia"]
+[UTCDate "2024.06.19"]
+[UTCTime "15:02:43"]
+
+1. e4 e5 2. Nc3 Nc6 3. Bc4 Bc5 4. Qg4 g6 5. Qf3 *
+
+
+[Event "dojo_Vienna_Copycat: Chapter 9"]
+[Date "2024.06.19"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C25"]
+[Opening "Vienna Game: Max Lange Defense"]
+[StudyName "dojo_Vienna_Copycat"]
+[ChapterName "Chapter 9"]
+[ChapterURL "https://lichess.org/study/VWSGsdXG/r7mJxR92"]
+[Annotator "https://lichess.org/@/NeroDiTroia"]
+[UTCDate "2024.06.19"]
+[UTCTime "15:03:11"]
+
+1. e4 e5 2. Nc3 Nc6 3. Bc4 Bc5 4. Qg4 Kf8 5. Qf3 *
+
+
+[Event "dojo_Vienna_Copycat: Chapter 10"]
+[Date "2024.06.19"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C25"]
+[Opening "Vienna Game: Max Lange Defense"]
+[StudyName "dojo_Vienna_Copycat"]
+[ChapterName "Chapter 10"]
+[ChapterURL "https://lichess.org/study/VWSGsdXG/SWfyMy5j"]
+[Annotator "https://lichess.org/@/NeroDiTroia"]
+[UTCDate "2024.06.19"]
+[UTCTime "15:03:50"]
+
+1. e4 e5 2. Nc3 Nc6 3. Bc4 Bc5 4. Qg4 d5 5. Qxg7 Qf6 6. Qxf6 Nxf6 7. Nxd5 { Taking with anything is fine, but this had the most venom. } 7... Nxd5 8. Bxd5 Nd4 9. Kd1 *
+
+
+[Event "dojo_Vienna_Copycat: Chapter 11"]
+[Date "2024.06.19"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C25"]
+[Opening "Vienna Game: Stanley Variation, Meitner-Mieses Gambit"]
+[StudyName "dojo_Vienna_Copycat"]
+[ChapterName "Chapter 11"]
+[ChapterURL "https://lichess.org/study/VWSGsdXG/jgMEt4IQ"]
+[Annotator "https://lichess.org/@/NeroDiTroia"]
+[UTCDate "2024.06.19"]
+[UTCTime "15:05:30"]
+
+1. e4 e5 2. Nc3 Nc6 3. Bc4 Bc5 4. Qg4 Qf6 5. Nd5 Qg6 6. Qxg6 hxg6 7. Nxc7+ Kd8 8. Nxa8 *
+
+
+[Event "dojo_Vienna_Copycat: Chapter 12"]
+[Date "2024.06.19"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C25"]
+[Opening "Vienna Game: Stanley Variation, Meitner-Mieses Gambit"]
+[StudyName "dojo_Vienna_Copycat"]
+[ChapterName "Chapter 12"]
+[ChapterURL "https://lichess.org/study/VWSGsdXG/9AkGCtAS"]
+[Annotator "https://lichess.org/@/NeroDiTroia"]
+[UTCDate "2024.06.19"]
+[UTCTime "15:06:53"]
+
+1. e4 e5 2. Nc3 Nc6 3. Bc4 Bc5 4. Qg4 Qf6 5. Nd5 Bxf2+ { Rare leads to a fun line! } 6. Kf1 (6. Kd1 { Good too but not the most fun line. }) 6... Qg6 7. Qxg6 hxg6 8. Kxf2 *
+
+
+[Event "dojo_Vienna_Copycat: Chapter 13"]
+[Date "2024.06.19"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C25"]
+[Opening "Vienna Game: Stanley Variation, Meitner-Mieses Gambit"]
+[StudyName "dojo_Vienna_Copycat"]
+[ChapterName "Chapter 13"]
+[ChapterURL "https://lichess.org/study/VWSGsdXG/8fYgBqee"]
+[Annotator "https://lichess.org/@/NeroDiTroia"]
+[UTCDate "2024.06.19"]
+[UTCTime "15:09:24"]
+
+1. e4 e5 2. Nc3 Nc6 3. Bc4 Bc5 4. Qg4 Qf6 5. Nd5 Bxf2+ 6. Kf1 Bb6+?? 7. Nxf6+ Nxf6 8. Qxg7 *
+
+
+[Event "dojo_Vienna_Copycat: Chapter 14"]
+[Date "2024.07.22"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C25"]
+[Opening "Vienna Game: Stanley Variation, Meitner-Mieses Gambit"]
+[StudyName "dojo_Vienna_Copycat"]
+[ChapterName "Chapter 14"]
+[ChapterURL "https://lichess.org/study/VWSGsdXG/XXk5fd2K"]
+[Annotator "https://lichess.org/@/NeroDiTroia"]
+[UTCDate "2024.07.22"]
+[UTCTime "14:42:56"]
+
+1. e4 e5 2. Nc3 Nc6 3. Bc4 Bc5 4. Qg4 Qf6 5. Nd5 Qxf2+ 6. Kd1 g6 7. Nh3 Qd4 8. d3 d6 9. Qf3 Bb6 10. c3 Qc5 11. b4 Nd4 12. cxd4 Qxd4 13. Nxb6 axb6 14. Qxf7+ Kd8 15. Bg5+ *
+
+
+[Event "dojo_Vienna_Copycat: Chapter 15"]
+[Date "2024.07.22"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C25"]
+[Opening "Vienna Game: Stanley Variation, Meitner-Mieses Gambit"]
+[StudyName "dojo_Vienna_Copycat"]
+[ChapterName "Chapter 15"]
+[ChapterURL "https://lichess.org/study/VWSGsdXG/xyMCYyCc"]
+[Annotator "https://lichess.org/@/NeroDiTroia"]
+[UTCDate "2024.07.22"]
+[UTCTime "15:21:27"]
+
+1. e4 e5 2. Nc3 Nc6 3. Bc4 Bc5 4. Qg4 Qf6 5. Nd5 Qxf2+ 6. Kd1 Bb6?? 7. Qxg7 (7. Nh3) 7... Nce7 8. Nh3 Qh4 9. Nxb6 axb6 10. Qxf7+ Kd8 11. Qf8# *
+
+

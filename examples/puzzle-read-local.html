@@ -59,6 +59,7 @@ import {Persistence} from "../src/components/Persistence.js"
 import {Sound} from "../src/components/Sound.js"
 import {MoveComment} from "../src/components/MoveComment.js"
 
+// Read study list
 async function fetchStudyList() {
     const response = await fetch("../lichess_study_list.txt")
     if (!response.ok) throw new Error("Could not load lichess_study_list.txt")
@@ -73,9 +74,10 @@ async function fetchStudyList() {
         })
 }
 
+// Fetch PGN from local /pgn/{studyId}.pgn
 async function fetchRandomChapter(studyId) {
-    const response = await fetch(`/study/${studyId}`)
-    if (!response.ok) throw new Error("Failed to fetch study from proxy")
+    const response = await fetch(`../pgn/${studyId}.pgn`)
+    if (!response.ok) throw new Error(`Failed to fetch ../pgn/${studyId}.pgn`)
 
     let fullPgn = await response.text()
     fullPgn = fullPgn.replace(/\r\n/g, "\n").trim()
@@ -92,15 +94,38 @@ async function fetchRandomChapter(studyId) {
 
 (async () => {
 
-    const studies = await fetchStudyList()
-    const randomStudy = studies[Math.floor(Math.random() * studies.length)]
-    const selected = await fetchRandomChapter(randomStudy.studyId)
+    let studies
+    try {
+        studies = await fetchStudyList()
+    } catch (err) {
+        alert("Could not load lichess_study_list.txt")
+        console.error(err)
+        return
+    }
 
+    if (studies.length === 0) {
+        alert("No studies found in lichess_study_list.txt")
+        return
+    }
+
+    const randomStudy = studies[Math.floor(Math.random() * studies.length)]
+
+    let selected
+    try {
+        selected = await fetchRandomChapter(randomStudy.studyId)
+    } catch (err) {
+        alert(`Failed loading ../pgn/${randomStudy.studyId}.pgn`)
+        console.error(err)
+        return
+    }
+
+    // Show full PGN
     document.getElementById("pgnOutput").innerText = selected.pgn
 
     const orientation = randomStudy.orientation.toLowerCase()
     const playerIsBlack = orientation === "black"
 
+    // Random board themes
     const boardThemes = [
         "default",
         "default-contrast",
@@ -110,7 +135,6 @@ async function fetchRandomChapter(studyId) {
         "chessboard-js",
         "black-and-white"
     ]
-
     const randomTheme =
         boardThemes[Math.floor(Math.random() * boardThemes.length)]
 
@@ -150,10 +174,10 @@ async function fetchRandomChapter(studyId) {
             assetsUrl: "../node_modules/cm-chessboard/assets/",
             orientation: playerIsBlack ? "b" : "w",
             style: {
-                cssClass: randomTheme, 
+                cssClass: randomTheme,
                 showCoordinates: true,
                 pieces: {
-                    file: "pieces/staunty.svg" 
+                    file: "pieces/staunty.svg"
                 }
             }
         }).initialized.then(() => {
