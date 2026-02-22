@@ -31,12 +31,12 @@
 <script type="importmap">
 {
     "imports": {
-        "cm-chessboard/": "../node_modules/cm-chessboard/",
-        "cm-web-modules/": "../node_modules/cm-web-modules/",
-        "chess.mjs/": "../node_modules/chess.mjs/",
-        "cm-pgn/": "../node_modules/cm-pgn/",
-        "cm-chess/": "../node_modules/cm-chess/",
-        "bootstrap-show-modal/": "../node_modules/bootstrap-show-modal/"
+        "cm-chessboard/": "../assets/node_modules/cm-chessboard/",
+        "cm-web-modules/": "../assets/node_modules/cm-web-modules/",
+        "chess.mjs/": "../assets/node_modules/chess.mjs/",
+        "cm-pgn/": "../assets/node_modules/cm-pgn/",
+        "cm-chess/": "../assets/node_modules/cm-chess/",
+        "bootstrap-show-modal/": "../assets/node_modules/bootstrap-show-modal/"
     }
 }
 </script>
@@ -159,7 +159,7 @@ async function fetchRandomChapter(studyId) {
         localStorage.removeItem(savePrefix + "PlayerColor")
 
         new Board(chessConsole, {
-            assetsUrl: "../node_modules/cm-chessboard/assets/",
+            assetsUrl: "../assets/node_modules/cm-chessboard/assets/",
             orientation: playerIsBlack ? "b" : "w",
             style: {
                 cssClass: randomTheme,
