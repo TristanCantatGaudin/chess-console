@@ -14,7 +14,7 @@ Loads a random PGN from a list of lichess studies, make it playable like a puzzl
 
 # Todo
 
-* add links to main index.html
 * add titles in lichess_study_list?
-* create one good Vienna and one good Charlick online
+* new local studies
+* split: all, just some
 
