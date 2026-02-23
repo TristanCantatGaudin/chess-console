@@ -70,7 +70,7 @@ async function fetchStudyList() {
         })
 }
 
-// Fetch PGN from local /pgn/{studyId}.pgn
+// Fetch PGN
 async function fetchRandomChapter(studyId) {
     const response = await fetch(`../pgn/${studyId}.pgn`)
     if (!response.ok) throw new Error(`Failed to fetch ../pgn/${studyId}.pgn`)
@@ -89,6 +89,51 @@ async function fetchRandomChapter(studyId) {
 }
 
 (async () => {
+
+    // 🔹 FULL PIECE SET LIST
+    const pieceSets = [
+        "anarchy.svg",
+        "anarchy_candy.svg",
+        "anarchy_fresh.svg",
+        "anarchy_halloween.svg",
+        "caliente.svg",
+        "caliente_blue.svg",
+        "caliente_pink.svg",
+        "checkers.svg",
+        "cooke.svg",
+        "disguised.svg",
+        "pixel.svg",
+        "pixel_neon.svg",
+        "regular.svg",
+        "rhosgfx.svg",
+        "smart.svg",
+        "smart_blue.svg",
+        "standard.svg",
+        "staunty.svg",
+        "staunty_blue.svg",
+        "tatiana.svg",
+        "tatiana_calm.svg",
+        "trendy.svg"
+    ]
+
+    const boardThemes = [
+        "default",
+        "default-contrast",
+        "green",
+        "blue",
+        "chess-club",
+        "chessboard-js",
+        "black-and-white"
+    ]
+
+    const randomPieceSet =
+        pieceSets[Math.floor(Math.random() * pieceSets.length)]
+
+    const randomTheme =
+        boardThemes[Math.floor(Math.random() * boardThemes.length)]
+
+    console.log("Selected piece set:", randomPieceSet)
+    console.log("Selected board theme:", randomTheme)
 
     let studies
     try {
@@ -119,18 +164,6 @@ async function fetchRandomChapter(studyId) {
 
     const orientation = randomStudy.orientation.toLowerCase()
     const playerIsBlack = orientation === "black"
-
-    const boardThemes = [
-        "default",
-        "default-contrast",
-        "green",
-        "blue",
-        "chess-club",
-        "chessboard-js",
-        "black-and-white"
-    ]
-    const randomTheme =
-        boardThemes[Math.floor(Math.random() * boardThemes.length)]
 
     const puzzlePlayerConfig = {
         name: playerIsBlack ? "Opponent" : "Player",
@@ -164,7 +197,7 @@ async function fetchRandomChapter(studyId) {
             style: {
                 cssClass: randomTheme,
                 showCoordinates: true,
-                pieces: { file: "../assets/pieces/staunty.svg" }
+                pieces: { file: `../assets/pieces/${randomPieceSet}` }
             }
         }).initialized.then(() => {
             new Persistence(chessConsole, {savePrefix}).load()
