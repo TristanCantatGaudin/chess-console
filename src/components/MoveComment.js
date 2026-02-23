@@ -14,16 +14,11 @@ export class MoveComment {
         this.comments = []
 
         this.element = document.createElement("div")
-        this.element.className = "move-comment mt-3 p-3 border rounded bg-light"
+        this.element.className = "move-comment mt-3 p-3 border rounded"
         this.element.style.display = "none"
-
-        this.title = document.createElement("strong")
-        this.title.innerText = "Comment:"
-        this.title.className = "d-block mb-2"
 
         this.content = document.createElement("div")
 
-        this.element.appendChild(this.title)
         this.element.appendChild(this.content)
 
         chessConsole.componentContainers.right.appendChild(this.element)
