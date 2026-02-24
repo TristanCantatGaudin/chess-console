@@ -42,17 +42,33 @@ export class MoveComment {
             return
         }
 
-        console.log("=== Extracting comments from PGN ===")
-
         this.comments = []
 
         let ply = 0
 
         // Remove headers
-        const body = pgn.replace(/\[[^\]]*\]/g, "")
+        let body = pgn.replace(/\[[^\]]*\]/g, "")
+
+        // 🔥 REMOVE VARIATIONS (handles nested parentheses)
+        let depth = 0
+        let mainline = ""
+
+        for (let char of body) {
+            if (char === "(") {
+                depth++
+                continue
+            }
+            if (char === ")") {
+                depth--
+                continue
+            }
+            if (depth === 0) {
+                mainline += char
+            }
+        }
 
         // Tokenize moves and comments
-        const tokens = body.split(/(\{[^}]*\})/)
+        const tokens = mainline.split(/(\{[^}]*\})/)
 
         for (let token of tokens) {
 
@@ -86,8 +102,6 @@ export class MoveComment {
                 ply++
             }
         }
-
-        console.log("Extracted comments:", this.comments)
     }
 
     update() {

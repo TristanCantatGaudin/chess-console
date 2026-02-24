@@ -17,4 +17,4 @@ Loads a random PGN from a list of lichess studies, make it playable like a puzzl
 * add titles in lichess_study_list?
 * new local studies
 * split: all, just some
-* other piece sets? dark mode?
+* fix comment mismatch when variations

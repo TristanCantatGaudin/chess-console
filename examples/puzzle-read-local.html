@@ -168,7 +168,7 @@ async function fetchRandomChapter(studyId) {
         "pixel_neon.svg",
         "regular.svg",
         "rhosgfx.svg",
-        "smart.svg",
+        //"smart.svg",
         "smart_blue.svg",
         "standard.svg",
         "staunty.svg",
@@ -179,12 +179,12 @@ async function fetchRandomChapter(studyId) {
     ]
 
     const boardThemes = [
-        "default",
-        "default-contrast",
-        "green",
+        //"default",
+        //"default-contrast",
+        //"green",
         "blue",
-        "chess-club",
-        "chessboard-js",
+        //"chess-club",
+        //"chessboard-js",
         "black-and-white"
     ]
 
@@ -236,7 +236,7 @@ async function fetchRandomChapter(studyId) {
     const puzzleOpponentConfig = {
         name: playerIsBlack ? "Player" : "Opponent",
         type: PuzzleOpponent,
-        props: { scriptPGN: selected.pgn, delay: 300 }
+        props: { scriptPGN: selected.pgn, delay: 1500 }
     }
 
     const whiteConfig = playerIsBlack ? puzzleOpponentConfig : puzzlePlayerConfig
