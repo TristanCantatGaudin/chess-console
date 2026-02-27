@@ -16,20 +16,18 @@
 
 
 [Event "englund_charlick: Chapter 2"]
-[Date "2026.02.24"]
+[Date "2026.02.27"]
 [Result "*"]
 [Variant "Standard"]
-[ECO "?"]
-[Opening "?"]
+[ECO "A40"]
+[Opening "Englund Gambit: Hartlaub-Charlick Gambit"]
 [StudyName "englund_charlick"]
 [ChapterName "Chapter 2"]
-[ChapterURL "https://lichess.org/study/zwSCV2F3/B9QVriOA"]
+[ChapterURL "https://lichess.org/study/zwSCV2F3/yIPPZXaD"]
 [Annotator "https://lichess.org/@/NeroDiTroia"]
-[FEN "rnbqkb1r/pppp1ppp/5n2/4p3/2B1P3/8/PPPP1PPP/RNBQK1NR w KQkq - 2 3"]
-[SetUp "1"]
-[UTCDate "2026.02.24"]
-[UTCTime "19:07:51"]
+[UTCDate "2026.02.27"]
+[UTCTime "12:10:10"]
 
-3. Qh5 Nxh5 4. Bxf7+ Kxf7 *
+1. d4 e5 2. dxe5 d6 3. exd6 Bxd6 4. Nf3 Nc6 5. Nc3 Bg4 6. e3 Qe7 *
 
 
