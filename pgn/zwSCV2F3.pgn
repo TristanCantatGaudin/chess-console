@@ -15,3 +15,21 @@
 1. d4 e5 { they always take } 2. dxe5 { now do it again } 2... d6 3. exd6 { develop } 3... Bxd6 4. Nf3 { what is the rule? } *
 
 
+[Event "englund_charlick: Chapter 2"]
+[Date "2026.02.24"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "englund_charlick"]
+[ChapterName "Chapter 2"]
+[ChapterURL "https://lichess.org/study/zwSCV2F3/B9QVriOA"]
+[Annotator "https://lichess.org/@/NeroDiTroia"]
+[FEN "rnbqkb1r/pppp1ppp/5n2/4p3/2B1P3/8/PPPP1PPP/RNBQK1NR w KQkq - 2 3"]
+[SetUp "1"]
+[UTCDate "2026.02.24"]
+[UTCTime "19:07:51"]
+
+3. Qh5 Nxh5 4. Bxf7+ Kxf7 *
+
+
