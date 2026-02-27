@@ -134,7 +134,7 @@ async function fetchStudyList() {
 
 // Fetch PGN
 async function fetchRandomChapter(studyId) {
-    const response = await fetch(`../pgn/${studyId}.pgn`)
+    const response = await fetch(`../pgn/${studyId}.pgn?nocache=${Date.now()}`)
     if (!response.ok) throw new Error(`Failed to fetch ../pgn/${studyId}.pgn`)
 
     let fullPgn = await response.text()

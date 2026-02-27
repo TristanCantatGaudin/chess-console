@@ -1,8 +1,5 @@
 /**
- * Author and copyright: Stefan Haack (https://shaack.com)
- * Adapted for Puzzle Mode by AI
- * Repository: https://github.com/shaack/chess-console
- * License: MIT
+ * PuzzlePlayer enforces PGN move sequence
  */
 
 import {COLOR, INPUT_EVENT_TYPE} from "cm-chessboard/src/Chessboard.js"
@@ -75,7 +72,6 @@ export class PuzzlePlayer extends ChessConsolePlayer {
         return true
     }
 
-    // --- Called when it's this player's turn ---
     moveRequest(fen, moveResponse) {
         this.premoveManager.initContextMenu()
         if (this.chessConsole.state.chess.gameOver()) return
@@ -105,7 +101,6 @@ export class PuzzlePlayer extends ChessConsolePlayer {
         const move = {from: squareFrom, to: squareTo}
         let moveResult = tmpChess.move(move)
 
-        // Check for normal move
         if (!moveResult) {
             // Maybe it's a promotion move
             const piece = tmpChess.get(squareFrom)
@@ -124,7 +119,6 @@ export class PuzzlePlayer extends ChessConsolePlayer {
             return false
         }
 
-        // Post-move verification
         this._postMoveCheck(moveResult, currentPly, callback)
         return true
     }
@@ -132,18 +126,21 @@ export class PuzzlePlayer extends ChessConsolePlayer {
     _postMoveCheck(moveResult, ply, callback) {
         console.log(`Ply ${ply}: Player attempted move ${moveResult.san}`)
 
-        // Verify against PGN script
         const expectedMove = this.scriptQueue[ply]
         if (expectedMove) {
             if (moveResult.from !== expectedMove.from || moveResult.to !== expectedMove.to || moveResult.promotion !== expectedMove.promotion) {
                 console.log(`Move not allowed! Expected ${expectedMove.san}. Undoing...`)
-                callback(moveResult) // execute for a moment
+                callback(moveResult)
                 setTimeout(() => this.chessConsole.undoMove(), 10)
                 return
             }
         }
 
+        // Move is valid
         callback(moveResult)
+
+        // ✅ Notify opponent to play next move
+        this.chessConsole.messageBroker.publish('playerMoveValid', moveResult)
     }
 
     showPromotionDialog(square, color, move, chess, callback) {
