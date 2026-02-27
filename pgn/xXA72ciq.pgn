@@ -1,0 +1,90 @@
+[Event "Grand Prix Attack 1chap: 2...e6 3...d5 4...d4"]
+[Date "2026.02.25"]
+[Round "-"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "B23"]
+[Opening "Sicilian Defense: Closed"]
+[StudyName "Grand Prix Attack"]
+[ChapterName "Grand Prix Attack: 2...e6 3...d5 4...d4"]
+[ChapterURL "https://lichess.org/study/xXA72ciq/bcmppOo1"]
+[Annotator "https://lichess.org/@/NeroDiTroia"]
+
+1. e4 c5 2. Nc3 e6 3. f4 Nc6 *
+
+
+[Event "Grand Prix Attack 1chap: 2...e6 main Bb5 d6"]
+[Date "2026.02.25"]
+[Round "-"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "B23"]
+[Opening "Sicilian Defense: Closed"]
+[StudyName "Grand Prix Attack"]
+[ChapterName "Grand Prix Attack: 2...e6 main Bb5 d6"]
+[ChapterURL "https://lichess.org/study/xXA72ciq/4lh8UgSk"]
+[Annotator "https://lichess.org/@/NeroDiTroia"]
+
+1. e4 c5 2. Nc3 e6 3. f4 Nc6 4. Nf3 Nf6 { Where does the bishop go? } 5. Bb5 { Yes, so we don't get hit with d5. } 5... d6 6. Bxc6+ bxc6 7. d3 Be7 8. O-O O-O 9. Qe1 { This first. } *
+
+
+[Event "Grand Prix Attack 1chap: 2...d6 g6 long tactical line"]
+[Date "2026.02.25"]
+[Round "-"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "B23"]
+[Opening "Sicilian Defense: Closed"]
+[StudyName "Grand Prix Attack"]
+[ChapterName "Grand Prix Attack: 2...d6 g6 long tactical line"]
+[ChapterURL "https://lichess.org/study/xXA72ciq/tLTeQNy1"]
+[Annotator "https://lichess.org/@/NeroDiTroia"]
+
+1. e4 c5 2. Nc3 d6 { Ok, we know where our bishop will go. } 3. f4 g6 4. Nf3 Bg7 5. Bc4 Nc6 *
+
+
+[Event "Grand Prix Attack 1chap: 3...d6 main line to Nxf7"]
+[Date "2026.02.25"]
+[Round "-"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "B23"]
+[Opening "Sicilian Defense: Grand Prix Attack"]
+[StudyName "Grand Prix Attack"]
+[ChapterName "Grand Prix Attack: 3...d6 main line to Nxf7"]
+[ChapterURL "https://lichess.org/study/xXA72ciq/1K6LZDrB"]
+[Annotator "https://lichess.org/@/NeroDiTroia"]
+
+1. e4 c5 2. Nc3 Nc6 3. f4 d6 { This already tells us where to put our bishop. } 4. Nf3 g6 5. Bc4 { Lining up on the weak spot. } 5... Bg7 6. O-O Nf6 7. d3 O-O 8. Qe1 { Nice to do that first. } 8... a6 9. f5 gxf5 { We don't want to recapture. We wanted to open up our bishop, our rook, and expose their king, and shut down their bishop. } 10. Qh4 fxe4 { The most played, but a mistake! } 11. Ng5 { They only have two good moves. } 11... exd3 12. Rxf6 h6 13. Nxf7 *
+
+
+[Event "Grand Prix Attack 1chap: 4...Nf6 e6 long line"]
+[Date "2026.02.25"]
+[Round "-"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "B23"]
+[Opening "Sicilian Defense: Grand Prix Attack"]
+[StudyName "Grand Prix Attack"]
+[ChapterName "Grand Prix Attack: 4...Nf6 e6 long line"]
+[ChapterURL "https://lichess.org/study/xXA72ciq/6KwTr8Xi"]
+[Annotator "https://lichess.org/@/NeroDiTroia"]
+
+1. e4 c5 2. Nc3 Nc6 3. f4 d6 4. Nf3 Nf6 5. Bc4 g6 6. d3 Bg7 7. O-O O-O 8. Qe1 e6 9. f5 { We play f5 anyway! } 9... exf5 10. Qh4 h6 11. Bxh6 Nh5 { Pause. } 12. Bg5 Qd7 { Nelson suggests bringing in more pieces. In particular, one that could aim at a juicy square after some exchanges. } 13. Nd5 fxe4 { Nelson spends hours discussing a crazy line. } 14. dxe4 Qg4 15. Qxg4 Bxg4 { There was, and still is, a potential free pawn. Do you see it? } 16. Ne7+ Nxe7 17. Bxe7 Rfe8 18. Bxd6 b6 { Is anything hanging? } 19. c3 { Can they take on e4? } 19... Rad8 20. e5 { Ng5 was best but this works too. } 20... Bxf3 21. Rxf3 Bxe5 22. Bxf7+ Kg7 23. Bxe8 Rxe8 24. Bxe5+ Rxe5 25. Raf1 Re7 { Do you see it? } 26. g4 *
+
+
+[Event "Grand Prix Attack 1chap: 8...Nd4 tactic line"]
+[Date "2026.02.25"]
+[Round "-"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "B23"]
+[Opening "Sicilian Defense: Grand Prix Attack"]
+[StudyName "Grand Prix Attack"]
+[ChapterName "Grand Prix Attack: 8...Nd4 tactic line"]
+[ChapterURL "https://lichess.org/study/xXA72ciq/o8gT1gRX"]
+[Annotator "https://lichess.org/@/NeroDiTroia"]
+
+1. e4 c5 2. Nc3 Nc6 3. f4 d6 4. Nf3 g6 5. Bc4 Bg7 6. O-O Nf6 7. d3 O-O 8. Qe1 Nd4 { Rare. We have a fun response. } 9. f5 Nxc2 10. Qh4 Nxa1 11. fxg6 hxg6 { 90% played, but losing move! } 12. Ng5 Nh5 { Their only try... leaving a square attacked three times. } 13. Nxf7 Rxf7 14. Bxf7+ Kh7 15. Qg5 { This is apparently #9. } *
+
+
