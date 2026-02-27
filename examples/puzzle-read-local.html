@@ -13,66 +13,29 @@
     <link rel="stylesheet" href="../assets/styles/screen.css"/>
 
     <style>
-    /* Dark background for the whole page */
     body {
-        background-color: #121212; /* dark gray/black */
-        color: #e0e0e0; /* light text */
+        background-color: #121212;
+        color: #e0e0e0;
     }
-
-    /* Container padding/background override */
     .container-fluid {
         background-color: #121212;
         color: #e0e0e0;
-        min-height: 100vh; /* fill screen */
+        min-height: 100vh;
         padding: 2rem;
     }
-
-    /* PGN output box */
     #pgnOutput {
-        background-color: #1e1e1e !important; /* darker gray */
+        background-color: #1e1e1e !important;
         color: #f0f0f0 !important;
         border: 1px solid #333;
     }
-
-    /* Links */
-    a {
-        color: #80cbc4;
-    }
-
-    a:hover {
-        color: #4db6ac;
-    }
-
-    /* Headings */
-    h4, h3, h2, h1 {
-        color: #ffffff;
-    }
-
-    /* Bootstrap button override example (if any) */
-    .btn {
-        background-color: #333;
-        color: #fff;
-        border: 1px solid #555;
-    }
-
-    .btn:hover {
-        background-color: #555;
-    }
-
-    /* Dark mode for MoveComment */
-    .move-comment {
-        background-color: #1e1e1e !important; /* dark gray */
-        color: #f0f0f0 !important;           /* light text */
-        border: 1px solid #333 !important;
-    }
-
-    /* Optional: title inside comment */
-    .move-comment strong {
-        color: #ffffff;
-    }
+    a { color: #80cbc4; }
+    a:hover { color: #4db6ac; }
+    h1,h2,h3,h4 { color: #ffffff; }
+    .btn { background-color: #333; color: #fff; border: 1px solid #555; }
+    .btn:hover { background-color: #555; }
+    .move-comment { background-color: #1e1e1e !important; color: #f0f0f0 !important; border: 1px solid #333 !important; }
+    .move-comment strong { color: #ffffff; }
     </style>
-
-
 </head>
 <body>
 
@@ -117,7 +80,7 @@ import {Persistence} from "../src/components/Persistence.js"
 import {Sound} from "../src/components/Sound.js"
 import {MoveComment} from "../src/components/MoveComment.js"
 
-// Read study list
+// ---------------- PGN fetch helpers ----------------
 async function fetchStudyList() {
     const response = await fetch("../lichess_study_list.txt")
     if (!response.ok) throw new Error("Could not load ../lichess_study_list.txt")
@@ -132,7 +95,6 @@ async function fetchStudyList() {
         })
 }
 
-// Fetch PGN
 async function fetchRandomChapter(studyId) {
     const response = await fetch(`../pgn/${studyId}.pgn?nocache=${Date.now()}`)
     if (!response.ok) throw new Error(`Failed to fetch ../pgn/${studyId}.pgn`)
@@ -150,49 +112,51 @@ async function fetchRandomChapter(studyId) {
     return { pgn: selectedPgn }
 }
 
+// ---------------- PGN finalize function ----------------
+function finalizePGN(pgn) {
+    pgn = pgn.replace(/\r\n/g, "\n").trim();
+    const lines = pgn.split("\n");
+    let lastMoveLineIndex = -1;
+
+    for (let i = lines.length - 1; i >= 0; i--) {
+        if (!lines[i].startsWith("[")) {
+            lastMoveLineIndex = i;
+            break;
+        }
+    }
+
+    if (lastMoveLineIndex >= 0) {
+        let lastLine = lines[lastMoveLineIndex].trim();
+
+        // Remove trailing '*' if present
+        if (lastLine.endsWith("*")) {
+            lastLine = lastLine.slice(0, -1).trim();
+        }
+
+        // Append END OF PGN comment
+        if (!lastLine.endsWith("{END OF PGN}")) {
+            lastLine += " {END OF PGN}";
+        }
+
+        lines[lastMoveLineIndex] = lastLine;
+    }
+
+    return lines.join("\n");
+}
+
+// ---------------- MAIN ----------------
 (async () => {
-
-    // 🔹 FULL PIECE SET LIST
     const pieceSets = [
-        "anarchy.svg",
-        "anarchy_candy.svg",
-        "anarchy_fresh.svg",
-        "anarchy_halloween.svg",
-        "caliente.svg",
-        "caliente_blue.svg",
-        "caliente_pink.svg",
-        "checkers.svg",
-        "cooke.svg",
-        "disguised.svg",
-        "pixel.svg",
-        "pixel_neon.svg",
-        "regular.svg",
-        "rhosgfx.svg",
-        //"smart.svg",
-        "smart_blue.svg",
-        "standard.svg",
-        "staunty.svg",
-        "staunty_blue.svg",
-        "tatiana.svg",
-        "tatiana_calm.svg",
-        "trendy.svg"
-    ]
+        "anarchy.svg","anarchy_candy.svg","anarchy_fresh.svg","anarchy_halloween.svg",
+        "caliente.svg","caliente_blue.svg","caliente_pink.svg","checkers.svg","cooke.svg",
+        "disguised.svg","pixel.svg","pixel_neon.svg","regular.svg","rhosgfx.svg",
+        "smart_blue.svg","standard.svg","staunty.svg","staunty_blue.svg","tatiana.svg",
+        "tatiana_calm.svg","trendy.svg"
+    ];
+    const boardThemes = ["blue","black-and-white"];
 
-    const boardThemes = [
-        //"default",
-        //"default-contrast",
-        //"green",
-        "blue",
-        //"chess-club",
-        //"chessboard-js",
-        "black-and-white"
-    ]
-
-    const randomPieceSet =
-        pieceSets[Math.floor(Math.random() * pieceSets.length)]
-
-    const randomTheme =
-        boardThemes[Math.floor(Math.random() * boardThemes.length)]
+    const randomPieceSet = pieceSets[Math.floor(Math.random() * pieceSets.length)];
+    const randomTheme = boardThemes[Math.floor(Math.random() * boardThemes.length)];
 
     console.log("Selected piece set:", randomPieceSet)
     console.log("Selected board theme:", randomTheme)
@@ -212,7 +176,6 @@ async function fetchRandomChapter(studyId) {
     }
 
     const randomStudy = studies[Math.floor(Math.random() * studies.length)]
-
     let selected
     try {
         selected = await fetchRandomChapter(randomStudy.studyId)
@@ -222,7 +185,9 @@ async function fetchRandomChapter(studyId) {
         return
     }
 
-    document.getElementById("pgnOutput").innerText = selected.pgn
+    // ---------------- FINALIZE PGN ----------------
+    const finalizedPGN = finalizePGN(selected.pgn);
+    document.getElementById("pgnOutput").innerText = finalizedPGN;
 
     const orientation = randomStudy.orientation.toLowerCase()
     const playerIsBlack = orientation === "black"
@@ -230,13 +195,13 @@ async function fetchRandomChapter(studyId) {
     const puzzlePlayerConfig = {
         name: playerIsBlack ? "Opponent" : "Player",
         type: PuzzlePlayer,
-        props: { allowPremoves: true, scriptPGN: selected.pgn }
+        props: { allowPremoves: true, scriptPGN: finalizedPGN }
     }
 
     const puzzleOpponentConfig = {
         name: playerIsBlack ? "Player" : "Opponent",
         type: PuzzleOpponent,
-        props: { scriptPGN: selected.pgn, delay: 1500 }
+        props: { scriptPGN: finalizedPGN, delay: 1500 }
     }
 
     const whiteConfig = playerIsBlack ? puzzleOpponentConfig : puzzlePlayerConfig
@@ -246,7 +211,7 @@ async function fetchRandomChapter(studyId) {
         document.getElementById("console-container"),
         whiteConfig,
         blackConfig,
-        { pgn: selected.pgn }
+        { pgn: finalizedPGN }
     ).initialized.then((chessConsole) => {
 
         const savePrefix = "PuzzleMode"
@@ -270,12 +235,19 @@ async function fetchRandomChapter(studyId) {
         new HistoryControl(chessConsole)
         new CapturedPieces(chessConsole)
         new GameControl(chessConsole)
-        new MoveComment(chessConsole)
-        //new Sound(chessConsole, {
-        //    soundSpriteFile: "../assets/sounds/chess_console_sounds.mp3"
-        //})
-    })
+        const moveCommentComp = new MoveComment(chessConsole)
 
+        // ---------------- PARSE COMMENTS FROM PGN ----------------
+        const chess = chessConsole.state.chess;
+        const moves = chess.history({verbose:true});
+        moves.forEach((moveObj, ply) => {
+            const commentMatch = /{([^}]+)}/.exec(moveObj.san);
+            if (commentMatch) {
+                const comment = commentMatch[1];
+                chessConsole.messageBroker.publish('addMoveComment', {ply, comment});
+            }
+        });
+    })
 })()
 </script>
 
