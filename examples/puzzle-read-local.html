@@ -11,27 +11,17 @@
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <link rel="stylesheet" href="../assets/styles/screen.css"/>
+
+    <!-- Favicon block -->
     <link rel="icon" type="image/png" sizes="32x32" href="https://tristancantatgaudin.github.io/chess-console/favicon.png">
     <link rel="icon" type="image/png" sizes="16x16" href="https://tristancantatgaudin.github.io/chess-console/favicon.png">
     <link rel="shortcut icon" href="https://tristancantatgaudin.github.io/chess-console/favicon.png">
     <link rel="apple-touch-icon" href="https://tristancantatgaudin.github.io/chess-console/favicon.png">
 
     <style>
-    body {
-        background-color: #121212;
-        color: #e0e0e0;
-    }
-    .container-fluid {
-        background-color: #121212;
-        color: #e0e0e0;
-        min-height: 100vh;
-        padding: 2rem;
-    }
-    #pgnOutput {
-        background-color: #1e1e1e !important;
-        color: #f0f0f0 !important;
-        border: 1px solid #333;
-    }
+    body { background-color: #121212; color: #e0e0e0; }
+    .container-fluid { background-color: #121212; color: #e0e0e0; min-height: 100vh; padding: 2rem; }
+    #pgnOutput { background-color: #1e1e1e !important; color: #f0f0f0 !important; border: 1px solid #333; }
     a { color: #80cbc4; }
     a:hover { color: #4db6ac; }
     h1,h2,h3,h4 { color: #ffffff; }
@@ -84,18 +74,21 @@ import {Persistence} from "../src/components/Persistence.js"
 import {Sound} from "../src/components/Sound.js"
 import {MoveComment} from "../src/components/MoveComment.js"
 
-// ---------------- PGN fetch helpers ----------------
+// ---------------- UPDATED PGN fetch helpers ----------------
 async function fetchStudyList() {
     const response = await fetch("../lichess_study_list.txt")
     if (!response.ok) throw new Error("Could not load ../lichess_study_list.txt")
     const text = await response.text()
+
     return text
         .split("\n")
-        .map(line => line.trim())
-        .filter(line => line.length > 0)
+        .map(line => line.split("#")[0].trim())   // remove comments
+        .filter(line => line.length > 0)          // remove empty/comment lines
         .map(line => {
-            const [studyId, orientation] = line.split(/\s+/)
-            return { studyId, orientation: orientation || "black" }
+            const parts = line.split(/\s+/)
+            const studyId = parts[0]
+            const orientation = (parts[1] || "black").toLowerCase()
+            return { studyId, orientation }
         })
 }
 
@@ -132,12 +125,10 @@ function finalizePGN(pgn) {
     if (lastMoveLineIndex >= 0) {
         let lastLine = lines[lastMoveLineIndex].trim();
 
-        // Remove trailing '*' if present
         if (lastLine.endsWith("*")) {
             lastLine = lastLine.slice(0, -1).trim();
         }
 
-        // Append END OF PGN comment
         if (!lastLine.endsWith("{END OF PGN}")) {
             lastLine += " {END OF PGN}";
         }
@@ -189,7 +180,6 @@ function finalizePGN(pgn) {
         return
     }
 
-    // ---------------- FINALIZE PGN ----------------
     const finalizedPGN = finalizePGN(selected.pgn);
     document.getElementById("pgnOutput").innerText = finalizedPGN;
 
@@ -239,9 +229,8 @@ function finalizePGN(pgn) {
         new HistoryControl(chessConsole)
         new CapturedPieces(chessConsole)
         new GameControl(chessConsole)
-        const moveCommentComp = new MoveComment(chessConsole)
+        new MoveComment(chessConsole)
 
-        // ---------------- PARSE COMMENTS FROM PGN ----------------
         const chess = chessConsole.state.chess;
         const moves = chess.history({verbose:true});
         moves.forEach((moveObj, ply) => {
