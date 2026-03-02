@@ -1,0 +1,17 @@
+[Event "Von Hennig: Chapter 1 ChessBootCamp"]
+[Date "2026.02.28"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "B15"]
+[Opening "Caro-Kann Defense: von Hennig Gambit"]
+[StudyName "Von Hennig"]
+[ChapterName "Chapter 1 ChessBootCamp"]
+[ChapterURL "https://lichess.org/study/TktUzPeG/V1AOwi2g"]
+[Annotator "https://lichess.org/@/NeroDiTroia"]
+[UTCDate "2026.02.28"]
+[UTCTime "19:24:17"]
+
+{ https://www.youtube.com/watch?v=O0Kt0lQeAcQ }
+1. e4 c6 2. d4 d5 3. Nc3 dxe4 4. Bc4 Nf6 5. f3 exf3 6. Nxf3 e6 { Shutting down our bishop? And theirs. } 7. O-O Be7 8. Qe1 O-O 9. Bd3 { Yes, not so slow because we are ahead in development. } 9... Nbd7 10. Qh4 h6 11. Bxh6 Nd5 12. Bg5 g6 13. Nxd5 Bxg5 14. Nxg5 Qxg5 15. Qxg5 { This is apparently #9 } *
+
+
