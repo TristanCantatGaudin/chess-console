@@ -1,33 +1,100 @@
 [Event "englund_charlick: Chapter 1"]
-[Date "2025.11.30"]
+[Date "2026.02.28"]
 [Result "*"]
 [Variant "Standard"]
 [ECO "A40"]
 [Opening "Englund Gambit: Hartlaub-Charlick Gambit"]
 [StudyName "englund_charlick"]
 [ChapterName "Chapter 1"]
-[ChapterURL "https://lichess.org/study/zwSCV2F3/x9PEshGf"]
+[ChapterURL "https://lichess.org/study/zwSCV2F3/YFJXLPow"]
 [Annotator "https://lichess.org/@/NeroDiTroia"]
-[UTCDate "2025.11.30"]
-[UTCTime "20:51:45"]
+[UTCDate "2026.02.28"]
+[UTCTime "18:33:03"]
 
-{ hey }
-1. d4 e5 { they always take } 2. dxe5 { now do it again } 2... d6 3. exd6 { develop } 3... Bxd6 4. Nf3 { what is the rule? } *
+1. d4 e5 2. dxe5 d6 3. exd6 Bxd6 4. e3 Nf6 5. Nf3 Nc6 6. c3 Bg4 7. Nbd2 Qe7 8. Qb3 O-O-O 9. Bb5 Ne5 10. Nxe5 Qxe5 11. Nc4 Qh5 12. Nxd6+ Rxd6 { Pause. } 13. Bc4 Rd1+ 14. Qxd1 Bxd1 15. Bxf7 Qe2# *
 
 
 [Event "englund_charlick: Chapter 2"]
-[Date "2026.02.27"]
+[Date "2026.03.01"]
 [Result "*"]
 [Variant "Standard"]
 [ECO "A40"]
 [Opening "Englund Gambit: Hartlaub-Charlick Gambit"]
 [StudyName "englund_charlick"]
 [ChapterName "Chapter 2"]
-[ChapterURL "https://lichess.org/study/zwSCV2F3/yIPPZXaD"]
+[ChapterURL "https://lichess.org/study/zwSCV2F3/TE8LsjmK"]
 [Annotator "https://lichess.org/@/NeroDiTroia"]
-[UTCDate "2026.02.27"]
-[UTCTime "12:10:10"]
+[UTCDate "2026.03.01"]
+[UTCTime "18:54:43"]
 
-1. d4 e5 2. dxe5 d6 3. exd6 Bxd6 4. Nf3 Nc6 5. Nc3 Bg4 6. e3 Qe7 *
+{ https://www.youtube.com/watch?v=i0KwJ-VyvlQ&list=PLeLmy4hisTQGlKtvt5nWqBTg1zIQKyaH_&index=3 }
+1. d4 e5 2. dxe5 d6 3. exd6 Bxd6 4. Nc3 Nf6 5. Nf3 Nc6 6. e3 Bg4 7. Be2 Qe7 8. O-O O-O-O 9. Bd2 Bxf3 10. Bxf3 Qe5 11. e4 Qxh2# *
+
+
+[Event "englund_charlick: Chapter 3"]
+[Date "2026.03.01"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "A40"]
+[Opening "Englund Gambit: Hartlaub-Charlick Gambit"]
+[StudyName "englund_charlick"]
+[ChapterName "Chapter 3"]
+[ChapterURL "https://lichess.org/study/zwSCV2F3/VL3giZUb"]
+[Annotator "https://lichess.org/@/NeroDiTroia"]
+[UTCDate "2026.03.01"]
+[UTCTime "18:58:57"]
+
+{ https://www.youtube.com/watch?v=i0KwJ-VyvlQ&list=PLeLmy4hisTQGlKtvt5nWqBTg1zIQKyaH_&index=3 }
+1. d4 e5 2. dxe5 d6 3. exd6 Bxd6 4. Nf3 Nc6 5. g3 Bg4 6. Bg2 Qe7 7. O-O O-O-O 8. b3 Bxg3 { Be5 was even better. } 9. Qe1 Bd6 10. Bb2 Nf6 { Stockfish says if we played Bxf3 they can't take back or else it's forced mate. But this is ok too. } 11. c4 Rhe8 12. Nc3 Bxf3 13. Bxf3 Qe5 14. Rb1 Qxh2# *
+
+
+[Event "englund_charlick: Chapter 4"]
+[Date "2026.03.01"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "A40"]
+[Opening "Englund Gambit: Hartlaub-Charlick Gambit"]
+[StudyName "englund_charlick"]
+[ChapterName "Chapter 4"]
+[ChapterURL "https://lichess.org/study/zwSCV2F3/QKwbEY2B"]
+[Annotator "https://lichess.org/@/NeroDiTroia"]
+[UTCDate "2026.03.01"]
+[UTCTime "19:04:17"]
+
+{ https://www.youtube.com/watch?v=i0KwJ-VyvlQ&list=PLeLmy4hisTQGlKtvt5nWqBTg1zIQKyaH_&index=3 }
+1. d4 e5 2. dxe5 d6 3. exd6 Bxd6 4. e3 Nf6 5. Bd3 Nc6 6. Nf3 Bg4 7. O-O Ne5 { Qe7 was good too but this puts pressure. } 8. Be2 Qe7 9. Bd2 O-O-O 10. Bc3 Nxf3+ 11. gxf3 Bxh2+ { White resigns. } *
+
+
+[Event "englund_charlick: Chapter 5"]
+[Date "2026.03.01"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "A40"]
+[Opening "Englund Gambit: Hartlaub-Charlick Gambit"]
+[StudyName "englund_charlick"]
+[ChapterName "Chapter 5"]
+[ChapterURL "https://lichess.org/study/zwSCV2F3/LcrQRyap"]
+[Annotator "https://lichess.org/@/NeroDiTroia"]
+[UTCDate "2026.03.01"]
+[UTCTime "19:09:38"]
+
+{ https://www.youtube.com/watch?v=i0KwJ-VyvlQ&list=PLeLmy4hisTQGlKtvt5nWqBTg1zIQKyaH_&index=3 }
+1. d4 e5 2. dxe5 d6 3. exd6 Bxd6 4. Nf3 Nc6 5. Nc3 Bg4 6. e3 Qe7 7. Be2 O-O-O 8. Nd4 Bxe2 9. Qxe2 Nxd4 10. exd4 Nf6 11. Bg5 h6 { Rhe8 was better. } 12. Bxf6 Qxf6 13. O-O-O Rhe8 14. Qd2 Bf4 15. Qxf4 Qxf4+ *
+
+
+[Event "englund_charlick: Chapter 6"]
+[Date "2026.03.01"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "A40"]
+[Opening "Englund Gambit: Hartlaub-Charlick Gambit"]
+[StudyName "englund_charlick"]
+[ChapterName "Chapter 6"]
+[ChapterURL "https://lichess.org/study/zwSCV2F3/aBhFCihI"]
+[Annotator "https://lichess.org/@/NeroDiTroia"]
+[UTCDate "2026.03.01"]
+[UTCTime "19:47:34"]
+
+1. d4 { https://www.youtube.com/watch?v=i0KwJ-VyvlQ&list=PLeLmy4hisTQGlKtvt5nWqBTg1zIQKyaH_&index=3 } 1... e5 2. dxe5 d6 3. exd6 Bxd6 4. Nf3 Nc6 5. g3 Bg4 6. Bg2 Qe7 7. O-O O-O-O 8. Nbd2 h5 9. b3 Nf6 10. Bb2 h4 11. Nd4 Nxd4 12. Bxd4 hxg3 13. f3 Rxh2 { Bc5 was better. } 14. fxg4 Bc5 15. c3 Bxd4+ 16. cxd4 { Pause. } 16... Qe3+ 17. Rf2 Qxf2# *
 
 
