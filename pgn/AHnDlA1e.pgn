@@ -1,0 +1,80 @@
+[Event "White Repertoire - Main Line"]
+[Site "chessbook.com"]
+[Date "2026.03.03"]
+[Round "1"]
+[White "N/A"]
+[Black "N/A"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C25"]
+[Opening "Vienna Game"]
+[StudyName "Vienna Zhuravlev"]
+[ChapterName "N/A - N/A"]
+[ChapterURL "https://lichess.org/study/AHnDlA1e/Oxr7mByh"]
+[Annotator "https://lichess.org/@/NeroDiTroia"]
+[UTCDate "2026.03.03"]
+[UTCTime "20:23:09"]
+
+1. e4 e5 2. Nc3 Bb4 3. Qg4 Qf6 4. Nd5 Qg6 5. Qxg6 *
+
+
+[Event "White Repertoire - 3...Bxc3"]
+[Site "chessbook.com"]
+[Date "2026.03.03"]
+[Round "2"]
+[White "N/A"]
+[Black "N/A"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C25"]
+[Opening "Vienna Game"]
+[StudyName "Vienna Zhuravlev"]
+[ChapterName "N/A - N/A"]
+[ChapterURL "https://lichess.org/study/AHnDlA1e/NyX3lOI9"]
+[Annotator "https://lichess.org/@/NeroDiTroia"]
+[UTCDate "2026.03.03"]
+[UTCTime "20:23:09"]
+
+1. e4 e5 2. Nc3 Bb4 3. Qg4 Bxc3 4. Qxg7 Qf6 5. Qxf6 Nxf6 6. bxc3 Nxe4 7. f3 *
+
+
+[Event "White Repertoire - 3...g6"]
+[Site "chessbook.com"]
+[Date "2026.03.03"]
+[Round "3"]
+[White "N/A"]
+[Black "N/A"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C25"]
+[Opening "Vienna Game"]
+[StudyName "Vienna Zhuravlev"]
+[ChapterName "N/A - N/A"]
+[ChapterURL "https://lichess.org/study/AHnDlA1e/BTBCz16g"]
+[Annotator "https://lichess.org/@/NeroDiTroia"]
+[UTCDate "2026.03.03"]
+[UTCTime "20:23:09"]
+
+1. e4 e5 2. Nc3 Bb4 3. Qg4 g6 4. Qf3 Nf6 5. Bc4 O-O *
+
+
+[Event "White Repertoire - 3...Nf6"]
+[Site "chessbook.com"]
+[Date "2026.03.03"]
+[Round "4"]
+[White "N/A"]
+[Black "N/A"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C25"]
+[Opening "Vienna Game: Zhuravlev Countergambit"]
+[StudyName "Vienna Zhuravlev"]
+[ChapterName "N/A - N/A"]
+[ChapterURL "https://lichess.org/study/AHnDlA1e/WTvB39mW"]
+[Annotator "https://lichess.org/@/NeroDiTroia"]
+[UTCDate "2026.03.03"]
+[UTCTime "20:23:09"]
+
+1. e4 e5 2. Nc3 Bb4 3. Qg4 Nf6 4. Qxg7 Rg8 5. Qh6 *
+
+
