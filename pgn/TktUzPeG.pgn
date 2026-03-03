@@ -15,3 +15,66 @@
 1. e4 c6 2. d4 d5 3. Nc3 dxe4 4. Bc4 Nf6 5. f3 exf3 6. Nxf3 e6 { Shutting down our bishop? And theirs. } 7. O-O Be7 8. Qe1 O-O 9. Bd3 { Yes, not so slow because we are ahead in development. } 9... Nbd7 10. Qh4 h6 11. Bxh6 Nd5 12. Bg5 g6 13. Nxd5 Bxg5 14. Nxg5 Qxg5 15. Qxg5 { This is apparently #9 } *
 
 
+[Event "Von Hennig: Chapter 2 Chess Vibes"]
+[Date "2026.03.03"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "B15"]
+[Opening "Caro-Kann Defense: von Hennig Gambit"]
+[StudyName "Von Hennig"]
+[ChapterName "Chapter 2 Chess Vibes"]
+[ChapterURL "https://lichess.org/study/TktUzPeG/uNRgAx3v"]
+[Annotator "https://lichess.org/@/NeroDiTroia"]
+[UTCDate "2026.03.03"]
+[UTCTime "20:30:51"]
+
+{ https://www.youtube.com/watch?v=hPYvljiJWDk }
+1. e4 c6 2. d4 d5 3. Nc3 dxe4 4. Bc4 Nf6 5. f3 exf3 6. Nxf3 Bg4 { Blunder! There is a reasonable move and a fun move. Let's play the fun one. } 7. Ne5 Bxd1 8. Bxf7# *
+
+
+[Event "Von Hennig: Chapter 2 Chess Vibes"]
+[Date "2026.03.03"]
+[Result "*"]
+[Annotator "https://lichess.org/@/NeroDiTroia"]
+[Variant "Standard"]
+[ECO "B15"]
+[Opening "Caro-Kann Defense: von Hennig Gambit"]
+[StudyName "Von Hennig"]
+[ChapterName "Chapter 3 Chess Vibes"]
+[ChapterURL "https://lichess.org/study/TktUzPeG/VWdxdbPW"]
+
+{ https://www.youtube.com/watch?v=hPYvljiJWDk }
+1. e4 c6 2. d4 d5 3. Nc3 dxe4 4. Bc4 Nf6 5. f3 exf3 6. Nxf3 Bg4 { Blunder! There is a reasonable move and a fun move. Let's play the fun one. } 7. Ne5 Bh5 8. Qxh5 Nxh5 9. Bxf7# *
+
+
+[Event "Von Hennig: Chapter 2 Chess Vibes"]
+[Date "2026.03.03"]
+[Result "*"]
+[Annotator "https://lichess.org/@/NeroDiTroia"]
+[Variant "Standard"]
+[ECO "B15"]
+[Opening "Caro-Kann Defense: von Hennig Gambit"]
+[StudyName "Von Hennig"]
+[ChapterName "Chapter 4 Chess Vibes"]
+[ChapterURL "https://lichess.org/study/TktUzPeG/hx05xgPF"]
+
+{ https://www.youtube.com/watch?v=hPYvljiJWDk }
+1. e4 c6 2. d4 d5 3. Nc3 dxe4 4. Bc4 Nf6 5. f3 exf3 6. Nxf3 Bg4 { Blunder! There is a reasonable move and a fun move. Let's play the fun one. } 7. Ne5 Be6 8. Bxe6 fxe6 *
+
+
+[Event "Von Hennig: Chapter 5 - to split"]
+[Date "2026.03.03"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "B15"]
+[Opening "Caro-Kann Defense: von Hennig Gambit"]
+[StudyName "Von Hennig"]
+[ChapterName "Chapter 5 - to split"]
+[ChapterURL "https://lichess.org/study/TktUzPeG/aeDh3QQH"]
+[Annotator "https://lichess.org/@/NeroDiTroia"]
+[UTCDate "2026.03.03"]
+[UTCTime "20:48:28"]
+
+1. e4 c6 2. d4 d5 3. Nc3 dxe4 4. Bc4 Nf6 5. f3 exf3 (5... Bf5 6. fxe4 { If we can, get the bishop pair. } 6... Nxe4 7. Qf3 Nxc3 { Pause. } (7... Nd6 { The only good move. } 8. Bxf7+ Kxf7 9. g4) 8. Bxf7+ Kxf7 9. Qxf5+ Ke8 10. bxc3) 6. Nxf3 Bf5 (6... e6 { Passive... boring... let's mess things up! } 7. O-O Be7 8. Qe1 O-O 9. Bd3 Nbd7 10. Qh4 { This is equal but very hard for black. } 10... h6 (10... g6 11. Bg5 b6 12. Ne5 Nxe5 13. dxe5 { Magic! }) 11. Bxh6 gxh6 12. Qxh6 Re8 13. Ng5 Nf8 14. Rf3) 7. O-O e6 8. Ng5 h6 (8... Be7 9. Rxf5 exf5 10. Nxf7) (8... Bg6 { The only good move... but we have an idea! } 9. Bxe6 fxe6 10. Nxe6 Qd7 11. Bg5 Qxe6 12. Bxf6 gxf6 13. Re1) 9. Nxf7 Kxf7 10. Rxf5 Ke7 11. Qe2 *
+
+
