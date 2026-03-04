@@ -162,7 +162,7 @@
 [UTCDate "2026.03.02"]
 [UTCTime "12:32:11"]
 
-1. d4 e5 2. dxe5 d6 3. exd6 Bxd6 4. Nc3 Nf6 5. Bg5 Nc6 6. Nf3 h6 7. Bh4 Bg4 8. e3 Qe7 9. Nd5 Qe6 10. Bxf6 gxf6 11. Bc4 Qf5 12. O-O Rg8 13. Kh1 O-O-O 14. Qd3 { Pause. } 14... Qxf3 15. Ba6 Bh3 16. Bxb7+ Kb8 17. Qb5 Qxg2# *
+1. d4 e5 2. dxe5 d6 3. exd6 Bxd6 4. Nc3 Nf6 5. Bg5 Nc6 6. Nf3 h6 { Bg4 was good too. } 7. Bh4 Bg4 8. e3 Qe7 9. Nd5 Qe6 { We often have Qe6 when they come in with their knight. } 10. Bxf6 gxf6 11. Bc4 Qf5 { Dubious in fact. } 12. O-O { Yay! } 12... Rg8 13. Kh1 O-O-O 14. Qd3 { Pause. } 14... Qxf3 15. Ba6 Bh3 16. Bxb7+ Kb8 17. Qb5 Qxg2# *
 
 
 [Event "Charlick: Chapter 11"]

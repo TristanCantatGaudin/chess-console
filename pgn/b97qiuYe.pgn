@@ -106,7 +106,7 @@
 [UTCDate "2024.07.26"]
 [UTCTime "08:50:53"]
 
-1. e4 e5 2. Nc3 Nc6 3. Bc4 Nf6 4. d3 Bc5 5. f4 d6 6. Nf3 Ng4? 7. Ng5 O-O { [%cal Gh7h6] } (7... Nf2 8. Qh5 g6 9. Bxf7+ Kd7 10. Be6+ Ke8 11. Bf7+ Ke7) 8. f5 Nf2?? { [%cal Gc5f2] } 9. Qh5 h6 10. Nxf7 Rxf7 11. Qxf7+ Kh8?? { M6 } { [%cal Gg8h7] } 12. f6 Qxf6?? { M1 } { [%cal Gg7f6] } 13. Qg8# *
+1. e4 e5 2. Nc3 Nc6 3. Bc4 Nf6 4. d3 Bc5 5. f4 d6 6. Nf3 Ng4? { 11% } 7. Ng5 O-O { [%cal Gh7h6] } (7... Nf2 8. Qh5 g6 9. Bxf7+ Kd7 10. Be6+ Ke8 11. Bf7+ Ke7) 8. f5 { 70%! but a blunder } 8... Nf2?? { [%cal Gc5f2] } 9. Qh5 { 95% } 9... h6 10. Nxf7 Rxf7 11. Qxf7+ Kh8?? { M6 } { [%cal Gg8h7] } 12. f6 Qxf6?? { M1 } { [%cal Gg7f6] } 13. Qg8# *
 
 
 [Event "dojo_Vienna_Three_Knights: Chapter 7"]
