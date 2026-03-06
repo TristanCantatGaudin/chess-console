@@ -1,0 +1,135 @@
+[Event "Blackmar: Chapter 1"]
+[Date "2026.03.06"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "D00"]
+[Opening "Blackmar-Diemer Gambit: Netherlands Variation"]
+[StudyName "Blackmar"]
+[ChapterName "Chapter 1"]
+[ChapterURL "https://lichess.org/study/n8yiQx2h/hoswL9HQ"]
+[Annotator "https://lichess.org/@/NeroDiTroia"]
+
+{ https://www.youtube.com/watch?v=6IZNJS8UcB8 }
+1. e4 d5 2. d4 dxe4 3. Nc3 f5 { Bad idea. } 4. f3 { Bg5 was also good. } 4... exf3 5. Nxf3 { Then Bc4, castle.... } *
+
+
+[Event "Blackmar: Chapter 2"]
+[Date "2026.03.06"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "D00"]
+[Opening "Blackmar-Diemer Gambit Accepted: Teichmann Defense"]
+[StudyName "Blackmar"]
+[ChapterName "Chapter 2"]
+[ChapterURL "https://lichess.org/study/n8yiQx2h/nZQhjWvW"]
+[Annotator "https://lichess.org/@/NeroDiTroia"]
+
+{ https://www.youtube.com/watch?v=6IZNJS8UcB8 }
+1. e4 d5 2. d4 dxe4 3. Nc3 Nf6 { The only good move. } 4. f3 { Same as Von Hennig, in fact if they play c6 we play Bc4 and it transposes (before or after exfc3) } 4... exf3 5. Nxf3 Bg4 { Most common. } 6. h3 Bxf3 { Fifty fifty. } 7. Qxf3 Qxd4 8. Qxb7 Qe5+ 9. Be2 Qg3+ 10. Kf1 e6 11. Qxa8 Bc5 12. Qf3 { Taking the knight would be awful! } *
+
+
+[Event "Blackmar: Chapter 3"]
+[Date "2026.03.06"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "D00"]
+[Opening "Blackmar-Diemer Gambit Accepted: Teichmann Defense"]
+[StudyName "Blackmar"]
+[ChapterName "Chapter 3"]
+[ChapterURL "https://lichess.org/study/n8yiQx2h/XxpUFhMI"]
+[Annotator "https://lichess.org/@/NeroDiTroia"]
+
+{ https://www.youtube.com/watch?v=6IZNJS8UcB8 }
+1. e4 d5 2. d4 dxe4 3. Nc3 Nf6 { The only good move. } 4. f3 { Same as Von Hennig, in fact if they play c6 we play Bc4 and it transposes (before or after exfc3) } 4... exf3 5. Nxf3 Bg4 { Most common. } 6. h3 Bh5 { Fify fifty. } 7. g4 Bg6 8. Ne5 e6 9. Bg2 { Restricting the bishop's escape options. Important move! } 9... c6 { Most common. } 10. h4 h5 11. Nxg6 fxg6 12. g5 Nd5 13. Nxd5 exd5 { Castling is apparently good! Qd3 too. } 14. O-O *
+
+
+[Event "Blackmar: Chapter 4"]
+[Date "2026.03.06"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "D00"]
+[Opening "Blackmar-Diemer Gambit Accepted: Teichmann Defense"]
+[StudyName "Blackmar"]
+[ChapterName "Chapter 4"]
+[ChapterURL "https://lichess.org/study/n8yiQx2h/Wph4J3wk"]
+[Annotator "https://lichess.org/@/NeroDiTroia"]
+
+{ https://www.youtube.com/watch?v=6IZNJS8UcB8 }
+1. e4 d5 2. d4 dxe4 3. Nc3 Nf6 { The only good move. } 4. f3 { Same as Von Hennig, in fact if they play c6 we play Bc4 and it transposes (before or after exfc3) } 4... exf3 5. Nxf3 Bg4 { Most common. } 6. h3 Bh5 { Fify fifty. } 7. g4 Bg6 8. Ne5 e6 9. Bg2 { Restricting the bishop's escape options. Important move! } 9... c6 { Most common. } 10. h4 h6 11. Nxg6 fxg6 12. Qd3 Kf7 13. Rf1 { We are threatening g5... } *
+
+
+[Event "Blackmar: Chapter 5"]
+[Date "2026.03.06"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "D00"]
+[Opening "Blackmar-Diemer Gambit Accepted: Teichmann Defense, Classical Variation"]
+[StudyName "Blackmar"]
+[ChapterName "Chapter 5"]
+[ChapterURL "https://lichess.org/study/n8yiQx2h/ie3iB0dw"]
+[Annotator "https://lichess.org/@/NeroDiTroia"]
+
+{ https://www.youtube.com/watch?v=6IZNJS8UcB8 }
+1. e4 d5 2. d4 dxe4 3. Nc3 Nf6 { The only good move. } 4. f3 { Same as Von Hennig, in fact if they play c6 we play Bc4 and it transposes (before or after exfc3) } 4... exf3 5. Nxf3 Bg4 { Most common. } 6. h3 Bxf3 { Fifty fifty. } 7. Qxf3 c6 8. Be3 { Now will proceed as usual. } 8... e6 9. Bd3 Be7 10. O-O { Long castle + pawn storm is also good. } 10... O-O 11. Rf2 Nbd7 12. Raf1 Nd5 13. Qe4 N7f6 14. Rxf6 Nxf6 15. Rxf6 *
+
+
+[Event "Blackmar: Chapter 6"]
+[Date "2026.03.06"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "D00"]
+[Opening "Blackmar-Diemer Gambit Accepted: Teichmann Defense, Classical Variation"]
+[StudyName "Blackmar"]
+[ChapterName "Chapter 6"]
+[ChapterURL "https://lichess.org/study/n8yiQx2h/DZgGuNYb"]
+[Annotator "https://lichess.org/@/NeroDiTroia"]
+
+{ https://www.youtube.com/watch?v=6IZNJS8UcB8 }
+1. e4 d5 2. d4 dxe4 3. Nc3 Nf6 { The only good move. } 4. f3 { Same as Von Hennig, in fact if they play c6 we play Bc4 and it transposes (before or after exfc3) } 4... exf3 5. Nxf3 Bg4 { Most common. } 6. h3 Bxf3 { Fifty fifty. } 7. Qxf3 c6 8. Be3 { Now will proceed as usual. } 8... e6 9. Bd3 Be7 10. O-O-O { Short castle is also good. } 10... O-O 11. g4 Nbd7 12. h4 Nd5 13. Bd2 Nxc3 14. Bxc3 *
+
+
+[Event "Blackmar: Chapter 7"]
+[Date "2026.03.06"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "D00"]
+[Opening "Blackmar-Diemer Gambit Accepted: Euwe Defense"]
+[StudyName "Blackmar"]
+[ChapterName "Chapter 7"]
+[ChapterURL "https://lichess.org/study/n8yiQx2h/Jdq7i1oI"]
+[Annotator "https://lichess.org/@/NeroDiTroia"]
+
+{ https://www.youtube.com/watch?v=6IZNJS8UcB8 }
+1. e4 d5 2. d4 dxe4 3. Nc3 Nf6 { The only good move. } 4. f3 { Same as Von Hennig, in fact if they play c6 we play Bc4 and it transposes (before or after exfc3) } 4... exf3 5. Nxf3 e6 { Passive players do that. This helps us choose where to put our next piece. } 6. Bd3 Be7 7. O-O O-O 8. Qe1 b6 9. Qh4 Bb7 10. Bg5 { Black has some resources, but also many bad moves here (80% win rate). } 10... h6 11. Bxh6 gxh6 12. Qxh6 Nbd7 13. Ng5 Re8 14. Bh7+ Nxh7 15. Qxh7+ Kf8 *
+
+
+[Event "Blackmar: Chapter 8"]
+[Date "2026.03.06"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "D00"]
+[Opening "Blackmar-Diemer Gambit Accepted: Euwe Defense"]
+[StudyName "Blackmar"]
+[ChapterName "Chapter 8"]
+[ChapterURL "https://lichess.org/study/n8yiQx2h/5zfXuJRl"]
+[Annotator "https://lichess.org/@/NeroDiTroia"]
+
+{ https://www.youtube.com/watch?v=6IZNJS8UcB8 }
+1. e4 d5 2. d4 dxe4 3. Nc3 Nf6 { The only good move. } 4. f3 { Same as Von Hennig, in fact if they play c6 we play Bc4 and it transposes (before or after exfc3) } 4... exf3 5. Nxf3 e6 { Passive players do that. This helps us choose where to put our next piece. } 6. Bd3 Be7 7. O-O O-O 8. Qe1 b6 9. Qh4 Bb7 10. Bg5 { Black has some resources, but also many bad moves here (80% win rate). } 10... h6 11. Bxh6 gxh6 12. Qxh6 Nbd7 13. Ng5 Re8 14. Bh7+ Nxh7 15. Qxh7+ Kf8 *
+
+
+[Event "Blackmar: Chapter 9"]
+[Date "2026.03.06"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "D00"]
+[Opening "Blackmar-Diemer Gambit Accepted: Euwe Defense"]
+[StudyName "Blackmar"]
+[ChapterName "Chapter 9"]
+[ChapterURL "https://lichess.org/study/n8yiQx2h/I5NkXbPI"]
+[Annotator "https://lichess.org/@/NeroDiTroia"]
+
+{ https://www.youtube.com/watch?v=6IZNJS8UcB8 }
+1. e4 d5 2. d4 dxe4 3. Nc3 Nf6 { The only good move. } 4. f3 { Same as Von Hennig, in fact if they play c6 we play Bc4 and it transposes (before or after exfc3) } 4... exf3 5. Nxf3 e6 { Passive players do that. This helps us choose where to put our next piece. } 6. Bd3 Be7 7. O-O O-O 8. Qe1 b6 9. Qh4 Bb7 10. Bg5 { Black has some resources, but also many bad moves here (80% win rate). } 10... Nbd7 { Most played. } 11. Bxh7+ Nxh7 12. Bxe7 *
+
+
