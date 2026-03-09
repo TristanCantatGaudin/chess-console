@@ -100,7 +100,7 @@
 [Annotator "https://lichess.org/@/NeroDiTroia"]
 
 { https://www.youtube.com/watch?v=6IZNJS8UcB8 }
-1. e4 d5 2. d4 dxe4 3. Nc3 Nf6 { The only good move. } 4. f3 { Same as Von Hennig, in fact if they play c6 we play Bc4 and it transposes (before or after exfc3) } 4... exf3 5. Nxf3 e6 { Passive players do that. This helps us choose where to put our next piece. } 6. Bd3 Be7 7. O-O O-O 8. Qe1 b6 9. Qh4 Bb7 10. Bg5 { Black has some resources, but also many bad moves here (80% win rate). } 10... h6 11. Bxh6 gxh6 12. Qxh6 Nbd7 13. Ng5 Re8 14. Bh7+ Nxh7 15. Qxh7+ Kf8 *
+1. e4 d5 2. d4 dxe4 3. Nc3 Nf6 { The only good move. } 4. f3 { Same as Von Hennig, in fact if they play c6 we play Bc4 and it transposes (before or after exfc3) } 4... exf3 5. Nxf3 e6 { Passive players do that. This helps us choose where to put our next piece. } 6. Bd3 Be7 7. O-O O-O 8. Qe1 b6 9. Qh4 Bb7 10. Bg5 { Black has some resources, but also many bad moves here (80% win rate). } 10... h6 11. Bxh6 gxh6 12. Qxh6 Nbd7 13. Ng5 Re8 { Now it's M3. } 14. Bh7+ Nxh7 15. Qxh7+ Kf8 *
 
 
 [Event "Blackmar: Chapter 8"]
@@ -131,5 +131,21 @@
 
 { https://www.youtube.com/watch?v=6IZNJS8UcB8 }
 1. e4 d5 2. d4 dxe4 3. Nc3 Nf6 { The only good move. } 4. f3 { Same as Von Hennig, in fact if they play c6 we play Bc4 and it transposes (before or after exfc3) } 4... exf3 5. Nxf3 e6 { Passive players do that. This helps us choose where to put our next piece. } 6. Bd3 Be7 7. O-O O-O 8. Qe1 b6 9. Qh4 Bb7 10. Bg5 { Black has some resources, but also many bad moves here (80% win rate). } 10... Nbd7 { Most played. } 11. Bxh7+ Nxh7 12. Bxe7 *
+
+
+[Event "Blackmar: Chapter 10"]
+[Date "2026.03.08"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "D00"]
+[Opening "Blackmar-Diemer Gambit Declined: Vienna Defense"]
+[StudyName "Blackmar"]
+[ChapterName "Chapter 10"]
+[ChapterURL "https://lichess.org/study/n8yiQx2h/6VTnQtYR"]
+[Annotator "https://lichess.org/@/NeroDiTroia"]
+[UTCDate "2026.03.08"]
+[UTCTime "18:21:41"]
+
+1. e4 d5 2. d4 dxe4 3. Nc3 Nf6 4. f3 Bf5 { 80% take but 5-10% do this (in all other lines so far they would take). } 5. fxe4 Nxe4 6. Qf3 { Pretty much the only good move. } 6... Nxc3 7. bxc3 { They think they can't take but actually they could. Their best move is e6, but rarely played. } 7... Bc8 { Most played, not great! } (7... Bxc2) 8. Bc4 { B anywhere works, Nh3 actually works too. } 8... e6 9. Nh3 Be7 10. O-O O-O { Qg3 best, Bd3 most played but not as good because of f5. } 11. Qg3 { Now they have lots of possible reactions but white is better. } (11. Bd3) 11... Kh8 12. Ng5 Bxg5 13. Bxg5 f6 14. Bf4 *
 
 
