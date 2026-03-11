@@ -51,22 +51,22 @@ body{
 .btn:hover{
     background:#555;
 }
+
 .move-comment{
     background:#111;
     color:#ffeb3b;
     border:2px solid #ffeb3b;
-
     box-shadow:
         0 0 5px #ffeb3b,
         0 0 10px #ffeb3b,
         0 0 20px #ffc107;
-
     text-shadow:0 0 5px #ffeb3b;
 }
 
 .move-comment strong{
     color:#ffffff;
 }
+
 .gameState {
     background: #0d1117 !important;
     color: #4fc3f7 !important;
@@ -77,6 +77,21 @@ body{
         0 0 20px #0288d1;
     text-shadow: 0 0 5px #4fc3f7;
 }
+
+#lichessLink{
+    margin-top:20px;
+}
+
+#lichessLink a{
+    color:#4fc3f7;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+#lichessLink a:hover{
+    text-decoration:underline;
+}
+
 </style>
 </head>
 
@@ -90,10 +105,11 @@ body{
 back to <a href="../index.html">chess-console</a>
 </h4>
 
-<pre id="pgnOutput"
-class="p-3 border rounded mt-4"
-style="white-space:pre-wrap;"></pre>
+<div id="lichessLink"></div>
 
+<pre id="pgnOutput"
+class="p-3 border rounded mt-2"
+style="white-space:pre-wrap;"></pre>
 
 <h4 class="mt-5">Study Selection</h4>
 
@@ -150,6 +166,25 @@ import {MoveComment} from "../src/components/MoveComment.js"
 
 let studies = []
 let lastPuzzleKey = null
+
+
+function createLichessLink(pgn){
+
+    const encoded = encodeURIComponent(pgn)
+
+    const url =
+        "https://lichess.org/analysis/pgn/" + encoded
+
+    const container =
+        document.getElementById("lichessLink")
+
+    container.innerHTML =
+        `<a href="${url}" target="_blank">
+        <i class="fas fa-external-link-alt"></i>
+        See at Lichess
+        </a>`
+}
+
 
 
 async function fetchStudyList(){
@@ -350,6 +385,8 @@ async function loadPuzzle(){
     document.getElementById("pgnOutput")
         .innerText = finalizedPGN
 
+    createLichessLink(finalizedPGN)
+
     startChess(finalizedPGN,randomStudy.orientation)
 
 }
@@ -437,27 +474,6 @@ function startChess(pgn,orientation){
         new CapturedPieces(chessConsole)
         new GameControl(chessConsole)
         new MoveComment(chessConsole)
-
-        const chess = chessConsole.state.chess
-        const moves = chess.history({verbose:true})
-
-        moves.forEach((moveObj,ply)=>{
-
-            const commentMatch =
-                /{([^}]+)}/.exec(moveObj.san)
-
-            if(commentMatch){
-
-                chessConsole.messageBroker.publish(
-                    "addMoveComment",
-                    {
-                        ply,
-                        comment:commentMatch[1]
-                    }
-                )
-            }
-
-        })
 
     })
 

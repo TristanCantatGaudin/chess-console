@@ -11,7 +11,7 @@
 [UTCDate "2024.07.19"]
 [UTCTime "11:39:24"]
 
-1. e4 e5 2. Nc3 Nc6 3. Bc4 Nf6 4. d3 h6 5. f4 d6 6. Nf3 Bg4 7. O-O { h3 was good too } 7... exf4 8. Bxf4 Nd4 { now is a very good time to open the centre with e5, but we have other moves } 9. Qd2 { just connecting our rooks } 9... Nxf3+ 10. gxf3 { The only good move! } 10... Be6 11. Kh1 Qd7 12. Qf2 { explain Qf2 } 12... Bxc4 13. dxc4 Qc6 14. b3 Be7 15. Rg1 Nh5 16. Be3 a6 17. Nd5 Bg5 18. f4 Bf6 19. Bd4 Bxd4 20. Qxd4 Rg8 21. Qd1 { Doubling rooks also good. What is Qd1 doing btw? } 21... Nf6 (21... Nxf4 22. Nxf4 Qxe4+ 23. Ng2) 22. Nxf6+ Ke7 23. Nxg8+ Rxg8 24. Qd5 *
+1. e4 e5 2. Nc3 Nc6 3. Bc4 Nf6 4. d3 h6 5. f4 d6 6. Nf3 Bg4 7. O-O { h3 was good too } 7... exf4 (7... Nd4 8. fxe5 Bxf3 9. gxf3 dxe5 10. f4) 8. Bxf4 Nd4 { now is a very good time to open the centre with e5, but we have other moves } 9. Qd2 { just connecting our rooks } 9... Nxf3+ 10. gxf3 { The only good move! } 10... Be6 11. Kh1 Qd7 12. Qf2 { explain Qf2 } 12... Bxc4 13. dxc4 Qc6 14. b3 Be7 15. Rg1 Nh5 16. Be3 a6 17. Nd5 Bg5 18. f4 Bf6 19. Bd4 Bxd4 20. Qxd4 Rg8 21. Qd1 { Doubling rooks also good. What is Qd1 doing btw? } 21... Nf6 (21... Nxf4 22. Nxf4 Qxe4+ 23. Ng2) 22. Nxf6+ Ke7 23. Nxg8+ Rxg8 24. Qd5 *
 
 
 [Event "dojo_Vienna_Three_Knights: Chapter 2"]
@@ -27,7 +27,7 @@
 [UTCDate "2024.07.22"]
 [UTCTime "14:48:03"]
 
-1. e4 e5 2. Nc3 Nc6 3. Bc4 Nf6 4. d3 Bc5 { Most played (40%) } 5. f4 d6 { Most played (50%) } 6. Nf3 Bg4 { Most played (45%) } 7. Na4 { We want to get rid of this bishop immediately. Black has some counterplay: taking our N on f3, then Nd4, forcing our Q back, then b5 forking us! } 7... Bb6 (7... Bxf3 8. Qxf3 Nd4 9. Qd1 b5 (9... exf4) 10. Bxf7+ Kxf7 11. Nxc5 dxc5 12. fxe5 Nd7 13. c3) 8. Nxb6 axb6 9. c3 { Many other good moves but this works best. } (9. a3 Nd4 10. fxe5 dxe5 11. Bxf7+ Kxf7 12. Nxe5+) (9. O-O exf4 (9... Nd4 10. fxe5 dxe5)) 9... O-O 10. O-O h6 11. h3 { Qe1 also good. } 11... Bxf3 { he kinda had to } (11... Bh5 12. g4 Bg6 13. f5) 12. Qxf3 exf4 13. Bxf4 Na5 14. Bb5 c6 15. Ba4 Nc4 16. Bb3 Nd2?? 17. Bxd2 d5 (17... Nh7) 18. Bxh6 gxh6 19. Qxf6 Qxf6 20. Rxf6 *
+1. e4 e5 2. Nc3 Nc6 3. Bc4 Nf6 4. d3 Bc5 { Most played (40%) } 5. f4 d6 { Most played (50%) } 6. Nf3 Bg4 { Most played (45%) } 7. Na4 { We want to get rid of this bishop immediately. Black has some counterplay: taking our N on f3, then Nd4, forcing our Q back, then b5 forking us! } 7... Bb6 (7... Bxf3 8. Qxf3 Nd4 9. Qd1 b5 (9... exf4) 10. Bxf7+ Kxf7 11. Nxc5 dxc5 12. fxe5 Nd7 13. c3) 8. Nxb6 axb6 9. c3 { Many other good moves but this works best. Castling is good too, inviting Nd4 (most common) looking for the usual bishop sac. } (9. a3 Nd4 10. fxe5 dxe5 11. Bxf7+ Kxf7 12. Nxe5+) (9. O-O exf4 (9... Nd4 10. fxe5 dxe5 11. Bxf7+ Kxf7 12. Nxe5+)) 9... O-O 10. O-O h6 11. h3 { Qe1 also good. } 11... Bxf3 { he kinda had to } (11... Bh5 12. g4 Bg6 13. f5) 12. Qxf3 exf4 13. Bxf4 Na5 14. Bb5 c6 15. Ba4 Nc4 16. Bb3 Nd2?? 17. Bxd2 d5 (17... Nh7) 18. Bxh6 gxh6 19. Qxf6 Qxf6 20. Rxf6 *
 
 
 [Event "Rated rapid game"]
@@ -69,7 +69,7 @@
 [ChapterName "Zibrak - jonhy_tactic"]
 [ChapterURL "https://lichess.org/study/b97qiuYe/KloZc7GR"]
 
-1. e4 e5 2. Nc3 Nc6 3. Bc4 Nf6 4. d3 { C24 Bishop's Opening: Vienna Hybrid } 4... Be7 5. f4 d6 6. Nf3 Bg4 7. O-O Nd4 { Same as chapter 3 before our move 7, except we Have O-O and they have Be7. Same idea anyway! } 8. fxe5 dxe5 9. Bxf7+ Kf8 { Most take, but this was the only good move! } 10. Bb3 Bxf3 11. gxf3 Qd6 12. f4 Qb6 13. Be3 { fxe5 is good too } 13... Nf3+ 14. Qxf3 { Black resigns. } 14... Bc5 15. fxe5 Bxe3+ 16. Kh1 Bc5 1-0
+1. e4 e5 2. Nc3 Nc6 3. Bc4 Nf6 4. d3 { C24 Bishop's Opening: Vienna Hybrid } 4... Be7 5. f4 d6 6. Nf3 Bg4 7. O-O { We want to invite Nd4. Why? } 7... Nd4 { Same as chapter 3 before our move 7, except we Have O-O and they have Be7. Same idea anyway! } 8. fxe5 dxe5 9. Bxf7+ Kf8 { Most take, but this was the only good move! } 10. Bb3 Bxf3 11. gxf3 Qd6 12. f4 Qb6 13. Be3 { fxe5 is good too } 13... Nf3+ 14. Qxf3 { Black resigns. } 14... Bc5 15. fxe5 Bxe3+ 16. Kh1 Bc5 1-0
 
 
 [Event "Rated blitz game"]
@@ -106,7 +106,7 @@
 [UTCDate "2024.07.26"]
 [UTCTime "08:50:53"]
 
-1. e4 e5 2. Nc3 Nc6 3. Bc4 Nf6 4. d3 Bc5 5. f4 d6 6. Nf3 Ng4? { 11% (Bg4 and O-O are more common) } 7. Ng5 O-O { [%cal Gh7h6] } (7... Nf2 8. Qh5 g6 9. Bxf7+ Kd7 10. Be6+ Ke8 11. Bf7+ Ke7) 8. f5 { 70%! but a blunder } 8... Nf2?? { [%cal Gc5f2] } 9. Qh5 h6 { 95% } 10. Nxf7 Rxf7 11. Qxf7+ Kh8?? { M6 } { [%cal Gg8h7] } 12. f6 Qxf6?? { M1 } { [%cal Gg7f6] } 13. Qg8# *
+1. e4 e5 2. Nc3 Nc6 3. Bc4 Nf6 4. d3 Bc5 5. f4 d6 6. Nf3 Ng4? { 11% (Bg4 and O-O are more common) } 7. Ng5 O-O { [%cal Gh7h6] } (7... Nf2 8. Qh5 g6 9. Bxf7+ Kd7 10. Be6+ Ke8 11. Bf7+ Ke7) 8. f5 Nf2?? { 70%! but a blunder, they should play Bf2+, we eventually trade their N for our B and have to play h4 } { [%cal Gc5f2] } 9. Qh5 h6 { 95% } 10. Nxf7 Rxf7 11. Qxf7+ Kh8?? { M6 } { [%cal Gg8h7] } 12. f6 Qxf6?? { M1 } { [%cal Gg7f6] } 13. Qg8# *
 
 
 [Event "dojo_Vienna_Three_Knights: Chapter 7"]
@@ -122,6 +122,6 @@
 [UTCDate "2024.11.18"]
 [UTCTime "13:21:18"]
 
-1. e4 e5 2. Nc3 Nc6 3. Bc4 Nf6 4. d3 Bc5 5. f4 d6 6. Nf3 O-O { Unlike chapter 6, here they castle (second most common) instead of jumping in with Ng4. } { [%cal Gf4f5,Gc3a4] } 7. f5 Ng4? 8. Bg5 { Best but Ng5 works too and wins a lot because 8... Nf2 is a huge blunder (we just play Qh5 and he has to sac pieces) however 8... Bf2+ is rare but annoying, we play Kf1, then he forks, we trade pieces, h4, black's Queen comes in... } (8. Ng5 Nf2 (8... Bf2+ 9. Kf1 Ne3+ 10. Bxe3 Bxe3 11. h4 Bxg5 12. hxg5 Qxg5) 9. Qh5) 8... Qe8 (8... Bf2+ 9. Kd2) 9. Nd5 Nf2 10. Qd2 Nxh1 11. Nf6+ gxf6 12. Bxf6 { Mate in 6! } *
+1. e4 e5 2. Nc3 Nc6 3. Bc4 Nf6 4. d3 Bc5 5. f4 d6 6. Nf3 O-O { Unlike chapter 6, here they castle (second most common) instead of jumping in with Ng4. } { [%cal Gf4f5,Gc3a4] } 7. f5 Ng4? { 10%. Nd4 is played more. } 8. Bg5 { Best but Ng5 works too and wins a lot because 8... Nf2 is a huge blunder (we just play Qh5 and he has to sac pieces) however 8... Bf2+ is rare but annoying, we play Kf1, then he forks, we trade pieces, h4, black's Queen comes in... } (8. Ng5 Nf2 (8... Bf2+ 9. Kf1 Ne3+ 10. Bxe3 Bxe3 11. h4 Bxg5 12. hxg5 Qxg5) 9. Qh5) 8... Qe8 (8... Bf2+ 9. Kd2) 9. Nd5 Nf2 10. Qd2 Nxh1 11. Nf6+ gxf6 12. Bxf6 { Mate in 6! } *
 
 
