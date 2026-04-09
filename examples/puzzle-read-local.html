@@ -279,6 +279,57 @@ function finalizePGN(pgn){
 }
 
 
+function extractFenFromPGN(pgn){
+
+    const match = pgn.match(/^\[FEN\s+"([^"]+)"\]/m)
+
+    return match ? match[1].trim() : ""
+
+}
+
+
+function buildScriptPGN(pgn){
+
+    const lines = pgn.replace(/\r\n/g,"\n").split("\n")
+
+    const headerLines = []
+    const moveLines = []
+
+    let inHeaders = true
+
+    lines.forEach(line=>{
+
+        const trimmed = line.trim()
+
+        if(inHeaders && trimmed.startsWith("[")){
+            headerLines.push(line)
+        }else{
+            inHeaders = false
+            moveLines.push(line)
+        }
+    })
+
+    let moveText = moveLines.join(" ")
+
+    moveText = moveText
+        .replace(/\{[^}]*\}/g," ")
+        .replace(/\$\d+/g," ")
+        .replace(/\b\d+\.(\.\.)?/g," ")
+        .replace(/\s+/g," ")
+        .trim()
+
+    if(!moveText.match(/(1-0|0-1|1\/2-1\/2|\*)\s*$/))
+        moveText += " *"
+
+    return [
+        ...headerLines,
+        "",
+        moveText
+    ].join("\n").trim()
+
+}
+
+
 
 function renderStudyCheckboxes(){
 
@@ -414,16 +465,19 @@ function startChess(pgn,orientation){
 
     const playerIsBlack = orientation === "black"
 
+    const startFen = extractFenFromPGN(pgn)
+    const scriptPGN = buildScriptPGN(pgn)
+
     const puzzlePlayerConfig={
         name:playerIsBlack?"Opponent":"Player",
         type:PuzzlePlayer,
-        props:{allowPremoves:true,scriptPGN:pgn}
+        props:{allowPremoves:true,scriptPGN}
     }
 
     const puzzleOpponentConfig={
         name:playerIsBlack?"Player":"Opponent",
         type:PuzzleOpponent,
-        props:{scriptPGN:pgn,delay:1500}
+        props:{scriptPGN,delay:1500}
     }
 
     const whiteConfig =
@@ -437,7 +491,7 @@ function startChess(pgn,orientation){
         document.getElementById("console-container"),
         whiteConfig,
         blackConfig,
-        {pgn}
+        startFen ? {fen:startFen} : {}
     ).initialized.then((chessConsole)=>{
 
         const savePrefix="PuzzleMode"
@@ -460,7 +514,13 @@ function startChess(pgn,orientation){
             new Persistence(
                 chessConsole,
                 {savePrefix}
-            ).load()
+            )
+
+            if(startFen){
+                chessConsole.initGame({fen:startFen})
+            }else{
+                chessConsole.initGame({})
+            }
 
         })
 
