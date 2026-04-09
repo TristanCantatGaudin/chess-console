@@ -78,3 +78,21 @@
 1. e4 e5 2. Nc3 Bb4 3. Qg4 Nf6 4. Qxg7 Rg8 5. Qh6 *
 
 
+[Event "Vienna Zhuravlev: testestest"]
+[Date "2026.03.21"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C25"]
+[Opening "Vienna Game: Stanley Variation, Meitner-Mieses Gambit"]
+[StudyName "Vienna Zhuravlev"]
+[ChapterName "testestest"]
+[ChapterURL "https://lichess.org/study/AHnDlA1e/cFe2LKL5"]
+[Annotator "https://lichess.org/@/NeroDiTroia"]
+[FEN "r1b1k1nr/pppp1ppp/2n2q2/2b1p3/2B1P1Q1/2N5/PPPP1PPP/R1B1K1NR w KQkq - 6 5"]
+[SetUp "1"]
+[UTCDate "2026.03.21"]
+[UTCTime "19:33:33"]
+
+5. Nd5 Qxf2+ 6. Kd1 *
+
+
