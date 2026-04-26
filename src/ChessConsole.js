@@ -34,6 +34,7 @@ export class ChessConsole {
             locale: navigator.language, // locale for i18n
             playerColor: COLOR.white, // the players color (color at bottom)
             gameVariant: GAME_VARIANT.standard,
+            fen: undefined, // initial fen position (used when pgn is not provided)
             pgn: undefined, // initial pgn, can contain header and history
             accessible: false // render additional information to improve the usage for persons using screen readers
         }
@@ -131,6 +132,9 @@ export class ChessConsole {
             this.state.chess.loadPgn(props.pgn, true)
             this.props.gameVariant = this.state.chess.props.gameVariant
             this.state.plyViewed = this.state.chess.plyCount()
+        } else if (props.fen) {
+            this.state.chess.load(props.fen)
+            this.state.plyViewed = 0
         } else {
             this.state.chess.load(FEN.start)
             this.state.plyViewed = 0
